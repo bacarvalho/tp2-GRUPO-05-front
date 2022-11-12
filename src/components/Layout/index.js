@@ -1,11 +1,13 @@
-import React, { Children } from 'react';
+import React, { Children, useState } from 'react';
 import Header from './Header'
 
 function Layout({children}) {
+    const [isLogged, setIsLogged] = useState(true);
+
     return (
         <>
             <div>
-                <Header />
+                <Header isLogged={isLogged}/>
                 <div className='backgorund-main'>
                     {children}
                 </div>
