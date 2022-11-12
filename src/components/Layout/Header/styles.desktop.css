@@ -1,0 +1,13 @@
+.header-container{
+    display: flex;
+}
+
+
+.header-links-container{
+    display: flex;
+}
+
+.header-link{
+    margin: 10px;
+}
+

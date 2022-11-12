@@ -1,0 +1,8 @@
+@import url('../Layout/Header/styles.desktop.css');
+
+.backgorund-main{
+    background: #FFF8F0;
+    width: 100%;
+    height: 500px;
+}
+
