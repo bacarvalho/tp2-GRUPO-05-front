@@ -1,16 +1,12 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-import librosServices from '../../services/librosServices';
-
+import Login from '../../components/Login';
 
 
 function View() {
- 
-    console.log(librosServices.datosHome());
     return (
         <>
-            <Layout>
-            </Layout>        
+                <Login/>       
         </>
     )
 }

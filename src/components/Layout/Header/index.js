@@ -3,6 +3,12 @@ import Libro from './Images/libro';
 import Avatar from './Images/avatar';
 
 function Header( {isLogged} ) {
+
+  function createAccount() {
+    window.location.href = '/createAccount'
+  }
+
+
   return (
     <div className='header-container'>
       <div className='header-image'>
@@ -17,7 +23,7 @@ function Header( {isLogged} ) {
           {!isLogged ? (
             <div>
               <a className='header-link' href='/login' >Ingresar</a>
-              <button className='header-login-button'>Crear cuenta</button>
+              <button className='header-login-button' onClick={createAccount}>Crear cuenta</button>
             </div>
           ) : 
             <Avatar /> 

@@ -5,9 +5,9 @@ import {
   Routes, 
 } from "react-router-dom";
 
-import View from './page/Home'
+import Home from './page/Home'
 import Profile from './page/Profile'
-
+import Login from './page/Login'
 
 
 export default function router() {
@@ -15,7 +15,8 @@ export default function router() {
     <Router>
       <div>
        <Routes>
-        <Route path="/" element={<View />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>

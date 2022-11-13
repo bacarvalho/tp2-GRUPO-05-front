@@ -1,10 +1,16 @@
 import React from 'react';
 
-function View() {
+function Login() {
+
+	function loginSeller(){
+		window.location.href = '/profile';
+	}
+
+
     return(
 		<div class="login">
 			<h1>Login</h1>
-			<form action="/auth" method="post">
+			<form action={loginSeller}>
 				<label for="username">
 					<i class="fas fa-user"></i>
 				</label>
@@ -16,11 +22,9 @@ function View() {
 				<input type="submit" value="Login"/>
 			</form>
 		</div>
-
-
     )
 
 
 }
 
-export default View;
+export default Login;
