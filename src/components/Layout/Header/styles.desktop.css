@@ -5,6 +5,7 @@
     position: fixed;
     width: 100%;
     background-color: white;
+    height: 60px;
 }
 
 .header-image{
@@ -24,5 +25,13 @@
 
 .header-avatar-container{
     margin-right: 40px;
+}
+
+.header-login-button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
 }
 

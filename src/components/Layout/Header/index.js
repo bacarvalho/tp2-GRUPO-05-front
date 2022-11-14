@@ -2,9 +2,7 @@ import React from 'react';
 import Libro from './Images/libro';
 import Avatar from './Images/avatar';
 
-function Header( isLogged ) {
-
-
+function Header( {isLogged} ) {
   return (
     <div className='header-container'>
       <div className='header-image'>
@@ -16,9 +14,14 @@ function Header( isLogged ) {
         <a href='' className='header-link'>Mis Prestamos</a>
       </div>
       <div className='header-avatar-container'>
-        {isLogged ? <Avatar /> :
-          <div></div>
-        }
+          {!isLogged ? (
+            <div>
+              <a className='header-link' href='/login' >Ingresar</a>
+              <button className='header-login-button'>Crear cuenta</button>
+            </div>
+          ) : 
+            <Avatar /> 
+          } 
       </div>
     </div>
   );
