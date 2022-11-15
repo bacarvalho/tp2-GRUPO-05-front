@@ -5,7 +5,7 @@ function Layout({children}) {
     const [isLogged, setIsLogged] = useState(false);
     return (
         <>
-            <div>
+            <div className='layout-container'>
                 <Header isLogged={isLogged}/>
                 <div className='backgorund-main'>
                     {children}

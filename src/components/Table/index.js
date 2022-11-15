@@ -4,7 +4,7 @@ import React from 'react';
 export default function Table({theaders, tbody}) {
 console.log(theaders);
     return (
-        <div id="table-container">
+        <div className='table-container'>
             <table>
                 <thead>
                     <tr>
