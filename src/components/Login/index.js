@@ -9,6 +9,7 @@ function Login() {
 
     return(
 		<div class="login">
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
 			<h1>Login</h1>
 			<form action={loginSeller}>
 				<label for="username">
