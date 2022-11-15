@@ -15,7 +15,6 @@ function View() {
         const getData = async () => {
             let response = await getLibros();
             if(response.status) {
-                console.log('LLEGA', response);
                 setMydata(response.data);
             }
         }

@@ -7,10 +7,7 @@ const instance = axios.create({
 async function getLibros() {
   try {
     const response = await instance.get('/')
-    console.log('LLEGA', response);
     if (response.status === 200) {
-
-      console.log(response.data);
       const libros = response.data;
       return { status: true, data: libros };
     }
