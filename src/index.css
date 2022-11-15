@@ -1,5 +1,6 @@
 @import url('/src/components/Layout/styles.desktop.css');
 @import url('/src/components/Table/styles.desktop.css');
+@import url('/src/page/Login/index.css');
 
 body {
   margin: 0;

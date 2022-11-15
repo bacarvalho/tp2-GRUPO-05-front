@@ -1,13 +1,38 @@
 .header-container{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: white;
+    height: 60px;
 }
 
+.header-image{
+    margin-left: 40px;
+}
 
 .header-links-container{
     display: flex;
+    justify-content: center;
 }
 
 .header-link{
     margin: 10px;
+    text-decoration:none;
+    color: black;
+}
+
+.header-avatar-container{
+    margin-right: 40px;
+}
+
+.header-login-button{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
