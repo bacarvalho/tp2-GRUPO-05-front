@@ -1,17 +1,19 @@
 import React, { useMemo } from 'react'
 import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table'
 import MOCK_DATA from './sampledata.json'
-import { COLUMNS } from './columns'
 import { GlobalFilter } from './GlobalFilter'
 import { ColumnFilter } from './ColumnFilter'
 
 import './styles.desktop.css'
 
-export default function Table(apidata) {
-	const someData = { apidata }
-	console.log(someData);
-	const columns = useMemo(() => COLUMNS, []);
+export default function Table({apidata, columns}) {
+	//const someData = {...apidata }
+	
+	//console.log("somedata",someData);
+	console.log("mockdatas", MOCK_DATA);
+	//const columns = useMemo(() => columnsData, []);
 	const data = useMemo(() => MOCK_DATA, []);
+	//const data=apidata;
 
 	const defaultColumn = useMemo(()=>{
 		return {

@@ -1,4 +1,3 @@
-
 export const COLUMNS = [
     {
       Header: 'Autor',
