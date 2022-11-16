@@ -27,6 +27,8 @@ tr{
     min-height:50px;
 }
 
+table tr:hover {background-color: #ddd;}
+
 
 
 
