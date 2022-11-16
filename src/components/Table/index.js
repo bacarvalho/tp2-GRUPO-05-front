@@ -51,9 +51,9 @@ export default function Table(apidata) {
 								headerGroup.headers.map(column => (
 									<th {...column.getHeaderProps(column.getSortByToggleProps())}>
 										{column.render('Header')}
-										<div id="sorting">
+										<span id="sorting">
 											{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
-										</div>
+										</span>
 										<div id="filter">{column.canFilter ? column.render('Filter') : null}</div>
 									</th>
 								))
