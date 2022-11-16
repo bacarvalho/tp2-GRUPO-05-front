@@ -14,6 +14,10 @@ export const COLUMNS = [
     {
       Header: 'Genero',
       accessor: 'Libro.Genero.nombre'
-    }
+    },
+    {
+        Header: 'Editorial',
+        accessor: 'Libro.Editorial.nombre'
+      }
   ]
   
