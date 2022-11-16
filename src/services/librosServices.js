@@ -1,66 +1,52 @@
-export default class librosServices {
-    
-    static datosHome(){
+import axios from 'axios';
 
-        return new Promise(async (resolve, reject) => {
-            await fetch("http://localhost:3000/")
-              .then((response) => {
-                if (response.ok) {
-                  return response.json();
-                }
-                reject(
-                  "No hemos podido recuperar ese json. El código de respuesta del servidor es: " +
-                    response.status
-                );
-              })
-              .then((json) => resolve(json))
-              .catch((err) => reject(err));
-        })
-    }   
+const instance = axios.create({
+  baseURL: 'http://localhost:3000'
+});
 
-            
-    static datosMisPrestamos(){
-
-        return new Promise(async (resolve, reject) => {
-            await fetch("http://localhost:3000/mis_prestamos")
-              .then((response) => {
-                if (response.ok) {
-                  return response.json();
-                }
-                reject(
-                  "No hemos podido recuperar ese json. El código de respuesta del servidor es: " +
-                    response.status
-                );
-              })
-              .then((json) => resolve(json))
-              .catch((err) => reject(err));
-        })
-
-
-
+async function getLibros() {
+  try {
+    const response = await instance.get('/')
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
     }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
 
-    static datosMisLibros(){
+async function datosMisPrestamos() {
+  try {
+    const response = await instance.get('http://localhost:3000/mis_prestamos')
+    console.log('LLEGA', response);
+    if (response.status === 200) {
 
-        return new Promise(async (resolve, reject) => {
-            await fetch("http://localhost:3000/mis_libros")
-              .then((response) => {
-                if (response.ok) {
-                  return response.json();
-                }
-                reject(
-                  "No hemos podido recuperar ese json. El código de respuesta del servidor es: " +
-                    response.status
-                );
-              })
-              .then((json) => resolve(json))
-              .catch((err) => reject(err));
-        })
-
-
-
+      console.log(response.data);
+      const libros = response.data;
+      return { status: true, data: libros };
     }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
 
+}
 
+async function datosMisLibros() {
 
- }
+  try {
+    const response = await instance.get('http://localhost:3000/mis_libros')
+    console.log('LLEGA', response);
+    if (response.status === 200) {
+
+      console.log(response.data);
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+
+}
+
+export { getLibros, datosMisPrestamos, datosMisLibros };

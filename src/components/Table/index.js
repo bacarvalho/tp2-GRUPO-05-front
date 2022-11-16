@@ -8,14 +8,14 @@ export const Table = () => {
 
     const columns = useMemo (() => COLUMNS, []);
     const data = useMemo(() => MOCK_DATA, []);
-  
+
     const tableInstance = useTable({
       columns,
       data
     });
-  
+
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = tableInstance;
-  
+
     return (
         <div className='table-container'>
             <table {...getTableProps()}>
@@ -30,9 +30,9 @@ export const Table = () => {
                         </tr>
                         ))
                     }
-            
+
                     </thead>
-            
+
                     <tbody {...getTableBodyProps()}>
                     {
                         rows.map(row => {
@@ -44,16 +44,16 @@ export const Table = () => {
                                 return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
                                 })
                             }
-            
+
                             </tr>
                         )
                         })
                     }
-            
+
                     </tbody>
-            
+
                 </table>
         </div>
-      
+
     )
   }

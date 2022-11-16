@@ -1,19 +1,34 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import Layout from '../../components/Layout';
-import librosServices from '../../services/librosServices';
-import { Table } from '../../components/Table';
+import Table from '../../components/Table';
+import {getLibros} from '../../services/librosServices';
+
+const getHeadings = () => {
+    let catalogData;
+    return Object.keys(catalogData[0]);
+}
 
 
 function View() {
- 
-    //console.log(librosServices.datosHome());
+    const [mydata, setMydata] = useState();
+    useEffect(() => {
+        const getData = async () => {
+            let response = await getLibros();
+            if(response.status) {
+                setMydata(response.data);
+            }
+        }
+        getData();
+    }, []);
+
+
     return (
         <>
             <Layout>
-                <Table  />
-            </Layout>            
+
+            </Layout>
         </>
     )
 }
-       
+
 export default View;
