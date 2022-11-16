@@ -1,6 +1,14 @@
-.table-container{
+.table-container {
     display:flex;
+    flex-wrap: wrap;
     justify-content: center;
+    align-content: flex-end;
+}
+
+.filter-container{
+    display:flex;
+    justify-content:center;
+    max-height: 100px;
 }
 
 table{
@@ -28,6 +36,15 @@ tr{
 }
 
 table tr:hover {background-color: #ddd;}
+
+#global-filter {
+    max-height: 50px;
+    min-width: 80%;
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-content: center;
+}
 
 
 
