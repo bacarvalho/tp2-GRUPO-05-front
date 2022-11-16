@@ -31,11 +31,8 @@ td, th{
     padding-left: 12px;
 }
 
-tr{
-    min-height:50px;
-}
-
 table tr:hover {background-color: #ddd;}
+#header-row:hover{background-color: darkred;}
 
 #global-filter {
     max-height: 50px; 

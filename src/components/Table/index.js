@@ -41,7 +41,7 @@ export default function Table({data, columns}) {
 			<table {...getTableProps()}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
-						<tr {...headerGroup.getHeaderGroupProps()}>
+						<tr id="header-row" {...headerGroup.getHeaderGroupProps()}>
 							{
 								headerGroup.headers.map(column => (
 									<th {...column.getHeaderProps(column.getSortByToggleProps())}>
