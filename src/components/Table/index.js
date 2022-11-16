@@ -4,18 +4,19 @@ import MOCK_DATA from './sampledata.json'
 import { COLUMNS } from './columns'
 import './styles.desktop.css'
 
-export const Table = () => {
-
+export default function Table ({apidata}) {
+    
+    console.log("APIDATA", apidata);
     const columns = useMemo (() => COLUMNS, []);
     const data = useMemo(() => MOCK_DATA, []);
 
     const tableInstance = useTable({
-      columns,
-      data
-    });
+        columns,
+        data
+      });
 
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow} = tableInstance;
-
+    
     return (
         <div className='table-container'>
             <table {...getTableProps()}>
@@ -55,5 +56,5 @@ export const Table = () => {
                 </table>
         </div>
 
-    )
-  }
+    );
+}

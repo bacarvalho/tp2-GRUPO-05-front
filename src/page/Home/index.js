@@ -1,12 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../../components/Layout';
-import Table from '../../components/Table';
+import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
-
-const getHeadings = () => {
-    let catalogData;
-    return Object.keys(catalogData[0]);
-}
 
 
 function View() {
@@ -20,12 +15,12 @@ function View() {
         }
         getData();
     }, []);
-
+    console.log("MYDATA", mydata);
 
     return (
         <>
             <Layout>
-
+                <Table {...mydata}/>
             </Layout>
         </>
     )
