@@ -1,16 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../../components/Layout';
-import Table from '../../components/Table';
+import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
+import { COLUMNS } from '../../components/Table/HomeColumns'
 
-const getHeadings = () => {
-    let catalogData;
-    return Object.keys(catalogData[0]);
-}
 
 
 function View() {
-    const [mydata, setMydata] = useState();
+    const [mydata, setMydata] = useState([]);
     useEffect(() => {
         const getData = async () => {
             let response = await getLibros();
@@ -21,14 +18,13 @@ function View() {
         getData();
     }, []);
 
-
     return (
         <>
             <Layout>
-           
-            </Layout>            
+                <Table data = {mydata} columns = {COLUMNS}/>
+            </Layout>
         </>
     )
 }
-       
+
 export default View;

@@ -1,29 +1,83 @@
-import React from 'react';
+import React, { useMemo } from 'react'
+import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table'
+//import MOCK_DATA from './sampledata.json'
+import { GlobalFilter } from './GlobalFilter'
+import { ColumnFilter } from './ColumnFilter'
 
+import './styles.desktop.css'
 
-export default function Table({theaders, tbody}) {
+export default function Table({data, columns}) {
 
-    return (
-        <div className='table-container'>
-            <table>
-                <thead>
-                    <tr>
-                    {theaders.map(heading => {
-                        return <th key={heading}>{heading}</th>
-                    })}
-                    </tr>
-                </thead>
-                <tbody>
-                    {tbody.map((row, index) => {
-                    return <tr key={index}>
-                        {theaders.map((key, index) => {
-                                return <td key={row[key]}>{row[key]}</td>
-                        })}
-                    </tr>;
-                })}
-                </tbody>
-            </table>
-        </div>
-    );
+	const defaultColumn = useMemo(()=>{
+		return {
+		  Filter: ColumnFilter
+		}
+	  },[]);
+
+	const {
+		getTableProps,
+		getTableBodyProps,
+		headerGroups,
+		rows,
+		prepareRow,
+		state,
+		setGlobalFilter,
+		} =
+		useTable({
+			columns,
+			data,
+			defaultColumn
+		},
+			useFilters,
+			useGlobalFilter,
+			useSortBy
+		);
+
+		const {globalFilter} = state;
+
+	return (
+		<div className='table-container'>
+			<GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+			<table {...getTableProps()}>
+				<thead>
+					{headerGroups.map((headerGroup) => (
+						<tr id="header-row" {...headerGroup.getHeaderGroupProps()}>
+							{
+								headerGroup.headers.map(column => (
+									<th {...column.getHeaderProps(column.getSortByToggleProps())}>
+										{column.render('Header')}
+										<span id="sorting">
+											{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
+										</span>
+										<div id="filter">{column.canFilter ? column.render('Filter') : null}</div>
+									</th>
+								))
+							}
+						</tr>
+					))
+					}
+				</thead>
+				<tbody {...getTableBodyProps()}>
+					{
+						rows.map(row => {
+							prepareRow(row);
+							return (
+								<tr {...row.getRowProps()}>
+									{
+										row.cells.map(cell => {
+											return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+										})
+									}
+
+								</tr>
+							)
+						})
+					}
+
+				</tbody>
+
+			</table>
+		</div>
+		
+	);
 }
-
