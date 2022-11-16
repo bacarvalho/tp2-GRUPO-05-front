@@ -38,7 +38,7 @@ tr{
 table tr:hover {background-color: #ddd;}
 
 #global-filter {
-    max-height: 50px;
+    max-height: 50px; 
     min-width: 80%;
     display:flex;
     flex-wrap: wrap;
