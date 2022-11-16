@@ -1,0 +1,302 @@
+[
+    {
+      "Libro": {
+        "titulo": "All the Vermeers in New York",
+        "imagen_portada": "sodales",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Beijing Taxi",
+        "imagen_portada": "urna",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "American Gun",
+        "imagen_portada": "aliquam",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Bastards, The (Los bastardos)",
+        "imagen_portada": "ut",
+        "Genero": {
+          "nombre": "crimen"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Electrick Children",
+        "imagen_portada": "vestibulum",
+        "Genero": {
+          "nombre": "romance"
+        },
+        "Autor": {
+          "nombre": "berges"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "All the Vermeers in New York",
+        "imagen_portada": "sodales",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Time of the Gypsies (Dom za vesanje)",
+        "imagen_portada": "odio",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "vihoy"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "360",
+        "imagen_portada": "porta",
+        "Genero": {
+          "nombre": "romance"
+        },
+        "Autor": {
+          "nombre": "vihoy"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Billy the Kid vs. Dracula",
+        "imagen_portada": "congue",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Love Loves Coincidences",
+        "imagen_portada": "sapien",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "vihoy"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "All the Vermeers in New York",
+        "imagen_portada": "sodales",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Beijing Taxi",
+        "imagen_portada": "urna",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Severance",
+        "imagen_portada": "duis",
+        "Genero": {
+          "nombre": "terror"
+        },
+        "Autor": {
+          "nombre": "vihoy"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Long Ride Home, The",
+        "imagen_portada": "rhoncus",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "berges"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Hard Corps, The",
+        "imagen_portada": "sit",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Hot Rock, The",
+        "imagen_portada": "cras",
+        "Genero": {
+          "nombre": "terror"
+        },
+        "Autor": {
+          "nombre": "cortesar"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Cleopatra",
+        "imagen_portada": "in",
+        "Genero": {
+          "nombre": "terror"
+        },
+        "Autor": {
+          "nombre": "vihoy"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Howards of Virginia, The",
+        "imagen_portada": "sapien",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "vihoy"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Oil, the Baby and the Transylvanians, The (Pruncul, petrolul si Ardelenii)",
+        "imagen_portada": "orci",
+        "Genero": {
+          "nombre": "terror"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Pride and the Passion, The",
+        "imagen_portada": "ipsum",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "cortesar"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Midnight (Primeiro Dia, O)",
+        "imagen_portada": "vel",
+        "Genero": {
+          "nombre": "terror"
+        },
+        "Autor": {
+          "nombre": "aire"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Sonatine (Sonachine)",
+        "imagen_portada": "ultrices",
+        "Genero": {
+          "nombre": "terror"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
+        "imagen_portada": "nunc",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "cortesar"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
+        "imagen_portada": "nunc",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "cortesar"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
+        "imagen_portada": "nunc",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "cortesar"
+        }
+      }
+    }
+  ]
