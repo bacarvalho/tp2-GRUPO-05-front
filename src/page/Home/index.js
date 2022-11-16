@@ -15,7 +15,6 @@ function View() {
         }
         getData();
     }, []);
-    console.log("MYDATA", mydata);
 
     return (
         <>
