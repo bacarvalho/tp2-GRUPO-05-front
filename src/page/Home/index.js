@@ -7,7 +7,7 @@ import { COLUMNS } from '../../components/Table/HomeColumns'
 
 
 function View() {
-    const [mydata, setMydata] = useState();
+    const [mydata, setMydata] = useState([]);
     useEffect(() => {
         const getData = async () => {
             let response = await getLibros();
@@ -21,7 +21,7 @@ function View() {
     return (
         <>
             <Layout>
-                <Table apidata = {mydata} columns = {COLUMNS}/>
+                <Table data = {mydata} columns = {COLUMNS}/>
             </Layout>
         </>
     )
