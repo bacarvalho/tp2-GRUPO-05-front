@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Layout from '../../components/Layout';
 import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
-import { COLUMNS } from '../../components/Table/HomeColumns'
+import { COLUMNS } from './HomeColumns'
 
 
 

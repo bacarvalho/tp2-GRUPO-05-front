@@ -8,6 +8,7 @@ import {
 import Home from './page/Home'
 import Profile from './page/Profile'
 import Login from './page/Login'
+import MyBooks from './page/MyBooks'
 
 
 export default function router() {
@@ -18,6 +19,7 @@ export default function router() {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/my_books" element={<MyBooks />} />
         <Route path="*" element={<NotFound/>} />
       </Routes>
       </div>

@@ -24,7 +24,6 @@ thead {
 }
 
 td, th{
-    min-width: 100px;
     text-align: left;
     padding-top:10px;
     padding-bottom:10px;

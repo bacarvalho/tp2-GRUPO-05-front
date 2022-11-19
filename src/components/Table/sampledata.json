@@ -1,377 +1,402 @@
 [
-    {
-      "Libro": {
-        "titulo": "All the Vermeers in New York",
-        "imagen_portada": "sodales",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "All the Vermeers in New York",
-        "imagen_portada": "sodales",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "All the Vermeers in New York",
-        "imagen_portada": "sodales",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "American Gun",
-        "imagen_portada": "aliquam",
-        "Genero": {
-          "nombre": "comedia"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Billy the Kid vs. Dracula",
-        "imagen_portada": "congue",
-        "Genero": {
-          "nombre": "comedia"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "omega"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Hard Corps, The",
-        "imagen_portada": "sit",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "omega"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Midnight (Primeiro Dia, O)",
-        "imagen_portada": "vel",
-        "Genero": {
-          "nombre": "terror"
-        },
-        "Autor": {
-          "nombre": "aire"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Electrick Children",
-        "imagen_portada": "vestibulum",
-        "Genero": {
-          "nombre": "romance"
-        },
-        "Autor": {
-          "nombre": "berges"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Long Ride Home, The",
-        "imagen_portada": "rhoncus",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "berges"
-        },
-        "Editorial": {
-          "nombre": "alfa"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
-        "imagen_portada": "nunc",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "cortesar"
-        },
-        "Editorial": {
-          "nombre": "epsilon"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
-        "imagen_portada": "nunc",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "cortesar"
-        },
-        "Editorial": {
-          "nombre": "epsilon"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
-        "imagen_portada": "nunc",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "cortesar"
-        },
-        "Editorial": {
-          "nombre": "epsilon"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Hot Rock, The",
-        "imagen_portada": "cras",
-        "Genero": {
-          "nombre": "terror"
-        },
-        "Autor": {
-          "nombre": "cortesar"
-        },
-        "Editorial": {
-          "nombre": "beta"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Pride and the Passion, The",
-        "imagen_portada": "ipsum",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "cortesar"
-        },
-        "Editorial": {
-          "nombre": "epsilon"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Bastards, The (Los bastardos)",
-        "imagen_portada": "ut",
-        "Genero": {
-          "nombre": "crimen"
-        },
-        "Autor": {
-          "nombre": "sabado"
-        },
-        "Editorial": {
-          "nombre": "omega"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Beijing Taxi",
-        "imagen_portada": "urna",
-        "Genero": {
-          "nombre": "comedia"
-        },
-        "Autor": {
-          "nombre": "sabado"
-        },
-        "Editorial": {
-          "nombre": "beta"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Beijing Taxi",
-        "imagen_portada": "urna",
-        "Genero": {
-          "nombre": "comedia"
-        },
-        "Autor": {
-          "nombre": "sabado"
-        },
-        "Editorial": {
-          "nombre": "beta"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Oil, the Baby and the Transylvanians, The (Pruncul, petrolul si Ardelenii)",
-        "imagen_portada": "orci",
-        "Genero": {
-          "nombre": "terror"
-        },
-        "Autor": {
-          "nombre": "sabado"
-        },
-        "Editorial": {
-          "nombre": "alfa"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Sonatine (Sonachine)",
-        "imagen_portada": "ultrices",
-        "Genero": {
-          "nombre": "terror"
-        },
-        "Autor": {
-          "nombre": "sabado"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "360",
-        "imagen_portada": "porta",
-        "Genero": {
-          "nombre": "romance"
-        },
-        "Autor": {
-          "nombre": "vihoy"
-        },
-        "Editorial": {
-          "nombre": "gama"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Cleopatra",
-        "imagen_portada": "in",
-        "Genero": {
-          "nombre": "terror"
-        },
-        "Autor": {
-          "nombre": "vihoy"
-        },
-        "Editorial": {
-          "nombre": "alfa"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Howards of Virginia, The",
-        "imagen_portada": "sapien",
-        "Genero": {
-          "nombre": "sci-fi"
-        },
-        "Autor": {
-          "nombre": "vihoy"
-        },
-        "Editorial": {
-          "nombre": "alfa"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Love Loves Coincidences",
-        "imagen_portada": "sapien",
-        "Genero": {
-          "nombre": "comedia"
-        },
-        "Autor": {
-          "nombre": "vihoy"
-        },
-        "Editorial": {
-          "nombre": "beta"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Severance",
-        "imagen_portada": "duis",
-        "Genero": {
-          "nombre": "terror"
-        },
-        "Autor": {
-          "nombre": "vihoy"
-        },
-        "Editorial": {
-          "nombre": "epsilon"
-        }
-      }
-    },
-    {
-      "Libro": {
-        "titulo": "Time of the Gypsies (Dom za vesanje)",
-        "imagen_portada": "odio",
-        "Genero": {
-          "nombre": "comedia"
-        },
-        "Autor": {
-          "nombre": "vihoy"
-        },
-        "Editorial": {
-          "nombre": "alfa"
-        }
+  {
+    "Libro": {
+      "isbn": 1,
+      "titulo": "All the Vermeers in New York",
+      "imagen_portada": "sodales",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "gama"
       }
     }
-  ]
+  },
+  {
+    "Libro": {
+      "isbn": 1,
+      "titulo": "All the Vermeers in New York",
+      "imagen_portada": "sodales",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 1,
+      "titulo": "All the Vermeers in New York",
+      "imagen_portada": "sodales",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 3,
+      "titulo": "American Gun",
+      "imagen_portada": "aliquam",
+      "Genero": {
+        "nombre": "comedia"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 9,
+      "titulo": "Billy the Kid vs. Dracula",
+      "imagen_portada": "congue",
+      "Genero": {
+        "nombre": "comedia"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "omega"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 15,
+      "titulo": "Hard Corps, The",
+      "imagen_portada": "sit",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "omega"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 21,
+      "titulo": "Midnight (Primeiro Dia, O)",
+      "imagen_portada": "vel",
+      "Genero": {
+        "nombre": "terror"
+      },
+      "Autor": {
+        "nombre": "aire"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 5,
+      "titulo": "Electrick Children",
+      "imagen_portada": "vestibulum",
+      "Genero": {
+        "nombre": "romance"
+      },
+      "Autor": {
+        "nombre": "berges"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 14,
+      "titulo": "Long Ride Home, The",
+      "imagen_portada": "rhoncus",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "berges"
+      },
+      "Editorial": {
+        "nombre": "alfa"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 23,
+      "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
+      "imagen_portada": "nunc",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "cortesar"
+      },
+      "Editorial": {
+        "nombre": "epsilon"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 23,
+      "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
+      "imagen_portada": "nunc",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "cortesar"
+      },
+      "Editorial": {
+        "nombre": "epsilon"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 23,
+      "titulo": "Green Street Hooligans (a.k.a. Hooligans)",
+      "imagen_portada": "nunc",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "cortesar"
+      },
+      "Editorial": {
+        "nombre": "epsilon"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 16,
+      "titulo": "Hot Rock, The",
+      "imagen_portada": "cras",
+      "Genero": {
+        "nombre": "terror"
+      },
+      "Autor": {
+        "nombre": "cortesar"
+      },
+      "Editorial": {
+        "nombre": "beta"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 20,
+      "titulo": "Pride and the Passion, The",
+      "imagen_portada": "ipsum",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "cortesar"
+      },
+      "Editorial": {
+        "nombre": "epsilon"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 4,
+      "titulo": "Bastards, The (Los bastardos)",
+      "imagen_portada": "ut",
+      "Genero": {
+        "nombre": "crimen"
+      },
+      "Autor": {
+        "nombre": "sabado"
+      },
+      "Editorial": {
+        "nombre": "omega"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 2,
+      "titulo": "Beijing Taxi",
+      "imagen_portada": "urna",
+      "Genero": {
+        "nombre": "comedia"
+      },
+      "Autor": {
+        "nombre": "sabado"
+      },
+      "Editorial": {
+        "nombre": "beta"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 2,
+      "titulo": "Beijing Taxi",
+      "imagen_portada": "urna",
+      "Genero": {
+        "nombre": "comedia"
+      },
+      "Autor": {
+        "nombre": "sabado"
+      },
+      "Editorial": {
+        "nombre": "beta"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 19,
+      "titulo": "Oil, the Baby and the Transylvanians, The (Pruncul, petrolul si Ardelenii)",
+      "imagen_portada": "orci",
+      "Genero": {
+        "nombre": "terror"
+      },
+      "Autor": {
+        "nombre": "sabado"
+      },
+      "Editorial": {
+        "nombre": "alfa"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 22,
+      "titulo": "Sonatine (Sonachine)",
+      "imagen_portada": "ultrices",
+      "Genero": {
+        "nombre": "terror"
+      },
+      "Autor": {
+        "nombre": "sabado"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 8,
+      "titulo": "360",
+      "imagen_portada": "porta",
+      "Genero": {
+        "nombre": "romance"
+      },
+      "Autor": {
+        "nombre": "vihoy"
+      },
+      "Editorial": {
+        "nombre": "gama"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 17,
+      "titulo": "Cleopatra",
+      "imagen_portada": "in",
+      "Genero": {
+        "nombre": "terror"
+      },
+      "Autor": {
+        "nombre": "vihoy"
+      },
+      "Editorial": {
+        "nombre": "alfa"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 18,
+      "titulo": "Howards of Virginia, The",
+      "imagen_portada": "sapien",
+      "Genero": {
+        "nombre": "sci-fi"
+      },
+      "Autor": {
+        "nombre": "vihoy"
+      },
+      "Editorial": {
+        "nombre": "alfa"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 10,
+      "titulo": "Love Loves Coincidences",
+      "imagen_portada": "sapien",
+      "Genero": {
+        "nombre": "comedia"
+      },
+      "Autor": {
+        "nombre": "vihoy"
+      },
+      "Editorial": {
+        "nombre": "beta"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 13,
+      "titulo": "Severance",
+      "imagen_portada": "duis",
+      "Genero": {
+        "nombre": "terror"
+      },
+      "Autor": {
+        "nombre": "vihoy"
+      },
+      "Editorial": {
+        "nombre": "epsilon"
+      }
+    }
+  },
+  {
+    "Libro": {
+      "isbn": 7,
+      "titulo": "Time of the Gypsies (Dom za vesanje)",
+      "imagen_portada": "odio",
+      "Genero": {
+        "nombre": "comedia"
+      },
+      "Autor": {
+        "nombre": "vihoy"
+      },
+      "Editorial": {
+        "nombre": "alfa"
+      }
+    }
+  }
+]
