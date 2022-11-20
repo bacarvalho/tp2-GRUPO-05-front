@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { LoginUser} from "../../services/OauthServices";
+import Cookies from "universal-cookie";
 
 
 const Login = ({islogged}) => {
@@ -23,6 +24,8 @@ const Login = ({islogged}) => {
     e.preventDefault();
 	const response = await LoginUser(username, password);
 	if(response.status) {
+		const cookie = new Cookies();
+		cookie.set('login', response.data);
 		setMyCookie(response.data); //Agregar cookie.
 		navigate("/");
 	} else {

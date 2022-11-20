@@ -3,9 +3,11 @@ import Layout from '../../components/Layout';
 import Login from '../../components/Login';
 
 
-function View() {
+function View(pops) {
+    const {islogged} = props;
+
     return (
-        <Login islogged={false}/>     
+        <Login islogged={islogged}/>     
     )
 }
        
