@@ -12,7 +12,6 @@ const Login = ({islogged}) => {
   const [password, setpassword] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
-  const [myCookie, setMyCookie] = useState("");
 
   useEffect(() => {
 	if (islogged){
@@ -26,7 +25,6 @@ const Login = ({islogged}) => {
 	if(response.status) {
 		const cookie = new Cookies();
 		cookie.set('login', response.data);
-		setMyCookie(response.data); //Agregar cookie.
 		navigate("/");
 	} else {
 		setIsDisabled(false);

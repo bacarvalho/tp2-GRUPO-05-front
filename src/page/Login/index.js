@@ -1,12 +1,11 @@
 import React from 'react';
 import Login from '../../components/Login';
+import {isLoggedUser} from '../../services/OauthServices';
 
-
-function View(props) {
-    const {islogged} = props;
+function View() {
 
     return (
-        <Login islogged={islogged}/>     
+        <Login islogged={isLoggedUser}/>     
     )
 }
        

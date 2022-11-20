@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
  const instance = axios.create({
     baseURL: 'http://localhost:3000'
@@ -17,6 +18,14 @@ async function LoginUser(user, pass) {
             message: error.response.data.error
         }};
       }
-  }
+}
 
-export {LoginUser}
+function isLoggedUser(){
+  const cookie = new Cookies();
+  if(cookie.get('login')){
+      return true;
+  }
+  return false;
+}
+
+export {LoginUser, isLoggedUser}

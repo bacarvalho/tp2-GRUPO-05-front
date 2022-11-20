@@ -7,7 +7,8 @@ function Header( {isLogged} ) {
   function createAccount() {
     window.location.href = '/createAccount'
   }
-
+  
+  //TODO: Cambiar de a para <Link>
 
   return (
     <div className='header-container'>
@@ -15,9 +16,9 @@ function Header( {isLogged} ) {
         <Libro />
       </div>
       <div className='header-links-container'>
-        <a href='' className='header-link'>Inicio</a>
-        <a href='' className='header-link'>Mis Libros</a>
-        <a href='' className='header-link'>Mis Prestamos</a>
+        <a href='' className='header-link' >Inicio</a> 
+        <a href='' className='header-link' >Mis Libros</a>
+        <a href='' className='header-link' >Mis Prestamos</a>
       </div>
       <div className='header-avatar-container'>
           {!isLogged ? (
