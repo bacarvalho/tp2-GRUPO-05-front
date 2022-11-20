@@ -10,7 +10,7 @@ function View() {
     const [mydata, setMydata] = useState([]);
     useEffect(() => {
         const getData = async () => {
-            let response = await getLibros();
+            let response = await getLibros();   
             if(response.status) {
                 setMydata(response.data);
             }
