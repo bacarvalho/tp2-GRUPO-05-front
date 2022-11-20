@@ -1,34 +1,37 @@
 import { useNavigate } from "react-router-dom";
 import React from "react";
 import { useState } from "react";
+import { LoginUser} from "../../services/OauthServices";
 
 
 const Login = () => {
+
   const navigate = useNavigate();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
-  const [authenticated, setauthenticated] = useState(
-    localStorage.getItem(localStorage.getItem("authenticated") || false)
-  );
-  const users = [{ username: "Jane", password: "testpassword" }];
-  const handleSubmit = (e) => {
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [myCookie, setMyCookie] = useState("");
+  
+  async function handleSubmit(e) {
     e.preventDefault();
-    const account = users.find((user) => user.username === username);
-
-
-	
-    if (account && account.password === password) {
-      localStorage.setItem("authenticated", true);
-      navigate("/dashboard");
-    }
+	const response = await LoginUser(username, password);
+	if(response.status) {
+		setMyCookie(response.data); //Agregar cookie.
+		navigate("/dashboard");
+	} else {
+		setIsDisabled(false);
+		setErrorMessage(response.error.message);
+	}
   };
+
   return (
     <div className="login">
 		<h1>Login</h1>
       <form onSubmit={handleSubmit}>
 	  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
-		<label for="username">
-			<i class="fas fa-user"></i>
+		<label>
+			<i className="fas fa-user"></i>
 		</label>
 		<input
 			type="text"
@@ -37,8 +40,8 @@ const Login = () => {
 			placeholder="Username"
 			onChange={(e) => setusername(e.target.value)}
 		/>
-		<label for="password">
-			<i class="fas fa-lock"></i>
+		<label>
+			<i className="fas fa-lock"></i>
 		</label>
 		<input
 			type="password"
@@ -46,6 +49,9 @@ const Login = () => {
 			placeholder="Password"
 			onChange={(e) => setpassword(e.target.value)}
 		/>
+		{
+			isDisabled ? <></> : <div>{errorMessage}</div>
+		}
 		<input type="submit" value="Submit" />
 	  </form>
     </div>
