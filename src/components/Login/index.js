@@ -1,31 +1,44 @@
-import React from 'react';
-
-function Login() {
-
-	function loginSeller(){
-		window.location.href = '/profile';
-	}
+import { useNavigate } from "react-router-dom";
+import React from "react";
+import { useState } from "react";
 
 
-    return(
-		<div class="login">
-			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
-			<h1>Login</h1>
-			<form action={loginSeller}>
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required />
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required/>
-				<input type="submit" value="Login"/>
-			</form>
-		</div>
-    )
-
-
-}
+const Login = () => {
+  const navigate = useNavigate();
+  const [username, setusername] = useState("");
+  const [password, setpassword] = useState("");
+  const [authenticated, setauthenticated] = useState(
+    localStorage.getItem(localStorage.getItem("authenticated") || false)
+  );
+  const users = [{ username: "Jane", password: "testpassword" }];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const account = users.find((user) => user.username === username);
+    if (account && account.password === password) {
+      localStorage.setItem("authenticated", true);
+      navigate("/dashboard");
+    }
+  };
+  return (
+    <div className="login">
+      <form onSubmit={handleSubmit}>
+	      <input
+	        type="text"
+	        name="Username"
+	        value={username}
+			placeholder="Username"
+	        onChange={(e) => setusername(e.target.value)}
+	      />
+	      <input
+	        type="password"
+	        name="Password"
+			placeholder="Password"
+	        onChange={(e) => setpassword(e.target.value)}
+	      />
+	      <input type="submit" value="Submit" />
+	  </form>
+    </div>
+  );
+};
 
 export default Login;
