@@ -14,6 +14,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const account = users.find((user) => user.username === username);
+
+
+	
     if (account && account.password === password) {
       localStorage.setItem("authenticated", true);
       navigate("/dashboard");
@@ -21,21 +24,29 @@ const Login = () => {
   };
   return (
     <div className="login">
+		<h1>Login</h1>
       <form onSubmit={handleSubmit}>
-	      <input
-	        type="text"
-	        name="Username"
-	        value={username}
+	  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"/>
+		<label for="username">
+			<i class="fas fa-user"></i>
+		</label>
+		<input
+			type="text"
+			name="Username"
+			value={username}
 			placeholder="Username"
-	        onChange={(e) => setusername(e.target.value)}
-	      />
-	      <input
-	        type="password"
-	        name="Password"
+			onChange={(e) => setusername(e.target.value)}
+		/>
+		<label for="password">
+			<i class="fas fa-lock"></i>
+		</label>
+		<input
+			type="password"
+			name="Password"
 			placeholder="Password"
-	        onChange={(e) => setpassword(e.target.value)}
-	      />
-	      <input type="submit" value="Submit" />
+			onChange={(e) => setpassword(e.target.value)}
+		/>
+		<input type="submit" value="Submit" />
 	  </form>
     </div>
   );
