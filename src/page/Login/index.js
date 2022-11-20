@@ -1,9 +1,8 @@
 import React from 'react';
-import Layout from '../../components/Layout';
 import Login from '../../components/Login';
 
 
-function View(pops) {
+function View(props) {
     const {islogged} = props;
 
     return (

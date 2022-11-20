@@ -7,7 +7,7 @@ import axios from 'axios';
 async function LoginUser(user, pass) {
     try {
         const data = {nombre: user, contrasenia: pass}
-        const response = await instance.post(`http://localhost:3000/user/login`, data);
+        const response = await instance.post(`/user/login`, data);
         if (response.status === 200) {
           return { status: true, data: response.data.token };
         }
