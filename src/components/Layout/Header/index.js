@@ -1,14 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Libro from './Images/libro';
 import Avatar from './Images/avatar';
 
 function Header( {isLogged} ) {
 
   function createAccount() {
-    window.location.href = '/createAccount'
+    window.location.href = '/inProgress'
   }
-  
-  //TODO: Cambiar de a para <Link>
 
   return (
     <div className='header-container'>
@@ -16,14 +15,14 @@ function Header( {isLogged} ) {
         <Libro />
       </div>
       <div className='header-links-container'>
-        <a href='' className='header-link' >Inicio</a> 
-        <a href='' className='header-link' >Mis Libros</a>
-        <a href='' className='header-link' >Mis Prestamos</a>
+        <Link to='' className='header-link' >Inicio</Link> 
+        <Link to='' className='header-link' >Mis Libros</Link>
+        <Link to='' className='header-link' >Mis Prestamos</Link>
       </div>
       <div className='header-avatar-container'>
           {!isLogged ? (
             <div>
-              <a className='header-link' href='/login' >Ingresar</a>
+              <Link className='header-link' to='/login' >Ingresar</Link>
               <button className='header-login-button' onClick={createAccount}>Crear cuenta</button>
             </div>
           ) : 
