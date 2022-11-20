@@ -5,7 +5,7 @@ import Login from '../../components/Login';
 
 function View() {
     return (
-        <Login/>     
+        <Login islogged={false}/>     
     )
 }
        

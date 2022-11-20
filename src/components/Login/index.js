@@ -1,10 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { LoginUser} from "../../services/OauthServices";
 
 
-const Login = () => {
+const Login = ({islogged}) => {
 
   const navigate = useNavigate();
   const [username, setusername] = useState("");
@@ -12,13 +12,19 @@ const Login = () => {
   const [isDisabled, setIsDisabled] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
   const [myCookie, setMyCookie] = useState("");
+
+  useEffect(() => {
+	if (islogged){
+		navigate("/");
+	}
+  })
   
   async function handleSubmit(e) {
     e.preventDefault();
 	const response = await LoginUser(username, password);
 	if(response.status) {
 		setMyCookie(response.data); //Agregar cookie.
-		navigate("/dashboard");
+		navigate("/");
 	} else {
 		setIsDisabled(false);
 		setErrorMessage(response.error.message);
@@ -39,6 +45,7 @@ const Login = () => {
 			value={username}
 			placeholder="Username"
 			onChange={(e) => setusername(e.target.value)}
+			required
 		/>
 		<label>
 			<i className="fas fa-lock"></i>
@@ -48,9 +55,10 @@ const Login = () => {
 			name="Password"
 			placeholder="Password"
 			onChange={(e) => setpassword(e.target.value)}
+			required
 		/>
 		{
-			isDisabled ? <></> : <div>{errorMessage}</div>
+			isDisabled ? <></> : <div className="login-error">{errorMessage}</div>
 		}
 		<input type="submit" value="Submit" />
 	  </form>
