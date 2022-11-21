@@ -1,16 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Route,
   Routes, 
 } from "react-router-dom";
-
 import Home from './page/Home'
 import Profile from './page/Profile'
 import Login from './page/Login'
 
-
 export default function router() {
+  
   return (
     <Router>
       <div>
@@ -24,6 +23,9 @@ export default function router() {
     </Router>
   );
 }
+
+
+
 
 function NotFound() {
   return (

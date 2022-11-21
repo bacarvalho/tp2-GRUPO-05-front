@@ -1,13 +1,11 @@
 import React from 'react';
-import Layout from '../../components/Layout';
 import Login from '../../components/Login';
-
+import { isLoggedUser } from '../../services/OauthServices';
 
 function View() {
+
     return (
-        <>
-                <Login/>       
-        </>
+        <Login islogged={isLoggedUser()}/>     
     )
 }
        

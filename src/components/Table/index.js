@@ -25,7 +25,7 @@ export default function Table({data, columns}) {
 		canPreviousPage,
 		pageOptions,
 		setGlobalFilter,
-		state: { pageIndex, pageSize, globalFilter },
+		state: { pageIndex, globalFilter },
 		prepareRow,
 		} =
 		useTable({
