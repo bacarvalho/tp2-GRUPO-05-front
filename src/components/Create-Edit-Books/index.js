@@ -1,7 +1,28 @@
 import React from 'react';
-import ImagenPortada from './NoPhoto.jpg';
+import { agregarLibro } from '../../services/librosServices';
 
-function CEBooks() {
+function getImage(imagenPhoto){
+	const image = 'images/' + imagenPhoto;
+	return image.toString();
+}
+
+function CEBooks( /* {libro} */) {
+
+	const libro = {
+		isbn: '1234',
+		titulo: '',
+		image: ''
+	}
+
+	function saveOrCreate(){
+		if (libro.isbn === ''){
+			agregarLibro();
+		} else {
+		//	editarLibro(); //Endpoint de editar.
+		}
+	}
+
+	console.log(getImage('NoPhoto.jpg'));
 
     return(
 	<>
@@ -11,7 +32,7 @@ function CEBooks() {
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
     <div class="container grid mt-5">
         <div class="imagen">
-            <img src={ImagenPortada}  alt=""/> 
+            <img src={libro.image === '' ? 'images/NoPhoto.jpg' :  getImage(libro.image) } alt=""/> 
             <div class="imagenButton">
                 <button type="button" class="btn btn-success">Subir foto de portada</button>
             </div>
@@ -47,7 +68,7 @@ function CEBooks() {
 					<input type="textarea" class="Sinopsis" placeholder="Sinopsis"/>
 				</div>
 				<div id="buttonsForm">
-                <button type="submit" class="btn btn-success" >Guardar</button>
+                <button type="submit" class="btn btn-success" onClick={saveOrCreate()}>Guardar</button>
                 <button type="button" class="btn btn-success" >Volver y descartar</button>
             	</div>
 			</form>
