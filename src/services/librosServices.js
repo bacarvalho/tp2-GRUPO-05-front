@@ -62,13 +62,21 @@ function agregarLibro(libro){
         message: error.response.data.error
     }};
   }
+    
+}
 
-
-
-
-
-
-
+function editarLibro(libro){
+  try {
+    const response =  instance.post(`/user/editar_libro/:isbn_libro`, libro);
+    if (response.status === 200) {
+      return { status: true};
+    }
+  } catch (error) {
+    return { status: false, error: {
+        status: error.response.status,
+        message: error.response.data.error
+    }};
+  }
     
 }
 

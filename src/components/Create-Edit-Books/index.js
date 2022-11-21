@@ -1,4 +1,5 @@
 import React from 'react';
+import './styles.desktop.css'
 import { agregarLibro } from '../../services/librosServices';
 
 function getImage(imagenPhoto){
@@ -14,15 +15,6 @@ function CEBooks( /* {libro} */) {
 		image: ''
 	}
 
-	function saveOrCreate(){
-		if (libro.isbn === ''){
-			agregarLibro();
-		} else {
-		//	editarLibro(); //Endpoint de editar.
-		}
-	}
-
-	console.log(getImage('NoPhoto.jpg'));
 
     return(
 	<>
@@ -30,6 +22,8 @@ function CEBooks( /* {libro} */) {
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"></link>
+	<div class = "body">
+
     <div class="container grid mt-5">
         <div class="imagen">
             <img src={libro.image === '' ? 'images/NoPhoto.jpg' :  getImage(libro.image) } alt=""/> 
@@ -44,8 +38,8 @@ function CEBooks( /* {libro} */) {
 						<input value={libro.isbn} type="text" id="ISBN" placeholder="ISBN" required/>
 				</div>
 				<div class="campo">
-					<label for="Libro">Libro:</label>
-					<input type="text" id="libro" placeholder="Libro" required/>
+					<label for="Titulo">Titulo:</label>
+					<input type="text" id="Titulo" placeholder="Titulo" required/>
 				</div>
 				<div class="campo">
 					<label for="Autor">Autor:</label>
@@ -68,12 +62,13 @@ function CEBooks( /* {libro} */) {
 					<input type="textarea" class="Sinopsis" placeholder="Sinopsis"/>
 				</div>
 				<div id="buttonsForm">
-                <button type="submit" class="btn btn-success" onClick={saveOrCreate()}>Guardar</button>
+                <button type="submit" class="btn btn-success" >Guardar</button>
                 <button type="button" class="btn btn-success" >Volver y descartar</button>
             	</div>
 			</form>
 		</div>
     </div>
+	</div>
 	</>
     )
 
