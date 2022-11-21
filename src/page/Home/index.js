@@ -3,6 +3,7 @@ import Layout from '../../components/Layout';
 import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
 import { COLUMNS } from '../../components/Table/HomeColumns'
+import { Quote } from '../../components/Quote'
 
 
 
@@ -21,6 +22,7 @@ function View() {
     return (
         <>
             <Layout>
+                <Quote />
                 <Table data = {mydata} columns = {COLUMNS}/>
             </Layout>
         </>
