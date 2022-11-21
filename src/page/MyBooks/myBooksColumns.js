@@ -9,7 +9,14 @@ export const COLUMNS = [
       {
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
-        disableFilters: true
+        disableFilters: true,
+        Cell: tableProps => (
+          <img
+            src={tableProps.row.original.imagen_portada}
+            width={60}
+            alt='Portada'
+          />
+        )
       },
     {
       Header: 'ISBN',
