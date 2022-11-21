@@ -41,9 +41,12 @@ input.Sinopsis.focus{
     
 }
 
-#buttonsForm{
-    padding-top: 40px;
-    justify-content: center;
+#buttonGuardar{
+    display: grid;
+}
+#buttonVolver{
+    padding-top: 10px;
+    display: grid;
 
 }
 

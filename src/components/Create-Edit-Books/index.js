@@ -1,20 +1,27 @@
 import React from 'react';
+import {useNavigate} from 'react-router-dom';
 import './styles.desktop.css'
-import { agregarLibro } from '../../services/librosServices';
+
+
+
+
+
 
 function getImage(imagenPhoto){
 	const image = 'images/' + imagenPhoto;
 	return image.toString();
 }
 
+
 function CEBooks( /* {libro} */) {
+	const navigate = useNavigate();
 
 	const libro = {
-		isbn: '1234',
+		isbn: '123',
 		titulo: '',
-		image: ''
+		image: '',
+		editorial: 'a',
 	}
-
 
     return(
 	<>
@@ -28,42 +35,44 @@ function CEBooks( /* {libro} */) {
         <div class="imagen">
             <img src={libro.image === '' ? 'images/NoPhoto.jpg' :  getImage(libro.image) } alt=""/> 
             <div class="imagenButton">
-                <button type="button" class="btn btn-success">Subir foto de portada</button>
+                <button type="button" class="btn btn-success" >Subir foto de portada</button>
             </div>
         </div>
         <div class="formulario">
             <form id="form">
 				<div class="campo">
 						<label for="ISBN">ISBN:</label>
-						<input value={libro.isbn} type="text" id="ISBN" placeholder="ISBN" required/>
+						<input defaultValue={libro.isbn} type="text" id="ISBN" placeholder="ISBN" required/>
 				</div>
 				<div class="campo">
 					<label for="Titulo">Titulo:</label>
-					<input type="text" id="Titulo" placeholder="Titulo" required/>
+					<input  defaultValue={libro.titulo} type="text" id="Titulo" placeholder="Titulo" required/>
 				</div>
 				<div class="campo">
 					<label for="Autor">Autor:</label>
-					<input type="text" id="autor" placeholder="Autor del libro" required/>
+					<input defaultValue={libro.autor} type="text" id="autor" placeholder="Autor del libro" required/>
 				</div>
 				<div class="campo">
 					<label for="Genero">Genero:</label>
-					<input type="text" id="genero" placeholder="Genero" required/>
+					<input  defaultValue={libro.genero} type="text" id="genero" placeholder="Genero" required/>
 				</div>
 				<div class="campo">
 					<label for="Editorial">Editorial:</label>
-					<input type="text" id="editorial" placeholder="Editorial" required/>
+					<input  defaultValue={libro.editorial} type="text" id="editorial" placeholder="Editorial" required/>
 				</div>
 				<div class="campo">
 					<label for="Anio">Año:</label>
-					<input type="text" id="Anio" placeholder="Anio" required/>
+					<input  defaultValue={libro.anio} type="text" id="Anio" placeholder="Anio" required/>
 				</div>
 				<div class="campo">
 					<label for="Sinopsis">Sinopsis:</label>
-					<input type="textarea" class="Sinopsis" placeholder="Sinopsis"/>
+					<input  defaultValue={libro.sinopsis} type="textarea" class="Sinopsis" placeholder="Sinopsis"/>
 				</div>
-				<div id="buttonsForm">
+				<div id="buttonGuardar">
                 <button type="submit" class="btn btn-success" >Guardar</button>
-                <button type="button" class="btn btn-success" >Volver y descartar</button>
+				</div>
+				<div id="buttonVolver">
+                <button type="button" class="btn btn-success" onClick={() => navigate(-1)} >Volver y descartar</button>
             	</div>
 			</form>
 		</div>
