@@ -12,3 +12,16 @@ th {
     max-width: 50%;
 }
 
+.buttons-container{
+    display: flex;
+    justify-content: center;
+}
+
+#add-book{
+    border-radius: 10px;
+    background-color: #284B2B;
+    color:whitesmoke;
+    padding: 5px 10px;
+    text-align: center;
+}
+

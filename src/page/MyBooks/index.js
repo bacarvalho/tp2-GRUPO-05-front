@@ -26,10 +26,10 @@ function View() {
         <>
             <Layout>
                 <h1>Mi Biblioteca</h1>
+                <Table data = {myData} columns = {COLUMNS}/>
                 <div className='buttons-container'>
                     <button id='add-book'>Nuevo Libro</button>
                 </div>
-                <Table data = {myData} columns = {COLUMNS}/>
             </Layout>
         </>
     )
