@@ -1,6 +1,6 @@
 import {format} from 'date-fns'
 
-const handleShow = (cell) => {
+const handleEdit = (cell) => {
   console.log("details ",cell?.row?.original);
 }
 
@@ -14,15 +14,17 @@ export const COLUMNS = [
     Header: "Libro",
     // primer grupo de columnas
     columns: [
-      {Header: 'Action',
+      {
+        Header: 'Acción',
         accessor: 'action',
         disableFilters: true,
         Cell: props => (
           <span>
-            <button className="act-btn" id='edit' onClick={() => handleShow(props)}>Editar</button>
+            <button className="act-btn" id='edit' onClick={() => handleEdit(props)}>Editar</button>
             <button className="act-btn" id ='delete' onClick={()=> handleDelete(props)}>Borrar</button>
           </span>
-      )},
+        )
+      },
       {
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
