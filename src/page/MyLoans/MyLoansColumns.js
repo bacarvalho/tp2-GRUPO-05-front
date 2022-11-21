@@ -3,6 +3,10 @@
  const handleReturn= (cell) => {
     console.log("details ",cell?.row?.original);
   }
+
+  const handleView= (cell) => {
+    console.log("details ",cell?.row?.original);
+  }
  
  export const COLUMNS = [
     {
@@ -10,7 +14,10 @@
       disableFilter: true,
       disableSortBy: true,
       Cell: props => (
-        <button className="act-btn" id='return' onClick={() => handleReturn(props)}>Devolver</button>
+        <span>
+          <button className="act-btn" id='view' onClick={() => handleView(props)}>Ver</button>
+          <button className="act-btn" id='return' onClick={() => handleReturn(props)}>Devolver</button>
+        </span>
       )
     },
     {
