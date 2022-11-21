@@ -1,19 +1,10 @@
+import { agregarLibro } from "../../services/librosServices";
+
 const formulario = document.querySelector('#form')
 
 eventListeners()
 function eventListeners(){
   formulario.addEventListener('submit', enviarForm)
-}
-
-class Libro{
-  constructor(){
-    this.libros = []
-  }
-
-  agregarLibro(libro){
- 
-    })
-  }
 }
 
 class Interfaz{
@@ -39,7 +30,6 @@ class Interfaz{
 }
 
 const interfaz = new Interfaz()
-const libros = new Libro()
 
 function enviarForm(e){
   e.preventDefault()
@@ -50,22 +40,26 @@ function enviarForm(e){
   const genero = document.querySelector('#genero').value 
   const editorial = document.querySelector('#editorial').value
   const Sinopsis = document.querySelector('#Sinopsis').value
+  const Anio = document.querySelector('#Anio').value
 
-  if(libro === '' || autor === '' || genero === '' || editorial === '' || ISBN === ''){
+
+  if(libro === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
     return 
   }
 
   const libroObj = {
     ISBN:ISBN,
-    libro:libro,
-    autor:autor,
-    genero:genero,
-    editorial:editorial,
-    Sinopsis:Sinopsis,
+    titulo:libro,
+    id_autor:autor,
+    id_genero:genero,
+    id_editorial:editorial,
+    sinopsis:Sinopsis,
+    anio:Anio,
+
   }
-  libros.agregarLibro(libroObj)
-  interfaz.mostrarAlerta('Libro registrado perfectamente')
+  
+  agregarLibro(libroObj);
   formulario.reset()
 
 

@@ -20,7 +20,7 @@ function CEBooks() {
             <form id="form">
 				<div class="campo">
 						<label for="ISBN">ISBN:</label>
-						<input type="text" id="ISBN" placeholder="ISBN" required/>
+						<input value={libro.isbn} type="text" id="ISBN" placeholder="ISBN" required/>
 				</div>
 				<div class="campo">
 					<label for="Libro">Libro:</label>
@@ -37,6 +37,10 @@ function CEBooks() {
 				<div class="campo">
 					<label for="Editorial">Editorial:</label>
 					<input type="text" id="editorial" placeholder="Editorial" required/>
+				</div>
+				<div class="campo">
+					<label for="Anio">Año:</label>
+					<input type="text" id="Anio" placeholder="Anio" required/>
 				</div>
 				<div class="campo">
 					<label for="Sinopsis">Sinopsis:</label>

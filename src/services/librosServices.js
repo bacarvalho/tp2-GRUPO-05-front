@@ -49,4 +49,27 @@ async function datosMisLibros() {
 
 }
 
-export { getLibros, datosMisPrestamos, datosMisLibros };
+
+function agregarLibro(libro){
+  try {
+    const response =  instance.post(`/user/crear_libro`, libro);
+    if (response.status === 200) {
+      return { status: true};
+    }
+  } catch (error) {
+    return { status: false, error: {
+        status: error.response.status,
+        message: error.response.data.error
+    }};
+  }
+
+
+
+
+
+
+
+    
+}
+
+export { getLibros, datosMisPrestamos, datosMisLibros, agregarLibro};
