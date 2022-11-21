@@ -3,16 +3,18 @@ import { datosMisPrestamos } from '../../services/librosServices';
 import Table from '../../components/Table';
 import Layout from '../../components/Layout';
 import { COLUMNS } from './MyLoansColumns'
-import { Link } from 'react-router-dom';
 import CatalogButton from '../../components/Buttons/CatalogButton';
+import Cookies from "universal-cookie";
 
 import './styles.desktop.css'
+import { isLoggedUser } from '../../services/OauthServices';
 
 function View() {
-    const [mydata, setMydata] = useState([]);
+    const cookie = new Cookies();
+    const [myData, setMydata] = useState([]);
     useEffect(() => {
         const getData = async () => {
-            let response = await datosMisPrestamos();   
+            let response = await datosMisPrestamos(cookie.get('login'));   
             if(response.status) {
                 setMydata(response.data);
             }
@@ -24,8 +26,16 @@ function View() {
         <>
             <Layout>
                 <h1>Mis Préstamos</h1>
-                <Table data = {mydata} columns = {COLUMNS}/>
-                <CatalogButton />
+                <div class='my-loans-container'>
+                    {isLoggedUser() ? (
+                        <span>
+                            <Table data = {myData} columns = {COLUMNS}/>
+                            <CatalogButton />
+                        </span>
+                    ) : 
+                        <span>Debes ingresar para acceder a este recurso</span>
+                    }
+                </div>
             </Layout>
         </>
     )
