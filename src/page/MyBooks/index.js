@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import Layout from '../../components/Layout';
-import MOCKDATA from './MOCKDATA'
+//import MOCKDATA from './MOCKDATA'
 import {COLUMNS} from './myBooksColumns'
 import Table from '../../components/Table'
 import './styles.desktop.css'

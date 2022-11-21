@@ -1,18 +1,35 @@
 import {format} from 'date-fns'
 
+const handleShow = (cell) => {
+  console.log("details ",cell?.row?.original);
+}
+
+const handleDelete = (cell) => {
+  console.log("delete", cell?.row?.original);
+}
+
 export const COLUMNS = [
   {
     // primer grupo
     Header: "Libro",
     // primer grupo de columnas
     columns: [
+      {Header: 'Action',
+        accessor: 'action',
+        disableFilters: true,
+        Cell: props => (
+          <span>
+            <button className="act-btn" id='edit' onClick={() => handleShow(props)}>Editar</button>
+            <button className="act-btn" id ='delete' onClick={()=> handleDelete(props)}>Borrar</button>
+          </span>
+      )},
       {
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
         disableFilters: true,
         Cell: tableProps => (
           <img
-            src={tableProps.row.original.imagen_portada}
+            src={tableProps.row.original.Libro.imagen_portada}
             width={60}
             alt='Portada'
           />
