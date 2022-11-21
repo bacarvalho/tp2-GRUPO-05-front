@@ -15,6 +15,7 @@ table{
     border: 1px solid gray;
     border-radius: 10px;
     width: 80%;
+    margin-top: 10px;
 }
 
 thead {
@@ -42,6 +43,11 @@ table tr:hover {background-color: #ddd;}
     padding: 20px;
 }
 
-
+#table-buttons-container{
+    display:flex;
+    justify-content: flex-end;
+    min-width: 80%;
+    margin-top: 10px;
+}
 
 

@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { useTable, useSortBy, useGlobalFilter, useFilters } from 'react-table'
+import { useTable, useSortBy, useGlobalFilter, useFilters, usePagination } from 'react-table'
 //import MOCK_DATA from './sampledata.json'
 import { GlobalFilter } from './GlobalFilter'
 import { ColumnFilter } from './ColumnFilter'
@@ -18,10 +18,15 @@ export default function Table({data, columns}) {
 		getTableProps,
 		getTableBodyProps,
 		headerGroups,
-		rows,
-		prepareRow,
-		state,
+		page,
+		nextPage,
+		previousPage,
+		canNextPage,
+		canPreviousPage,
+		pageOptions,
 		setGlobalFilter,
+		state: { pageIndex, globalFilter },
+		prepareRow,
 		} =
 		useTable({
 			columns,
@@ -30,10 +35,11 @@ export default function Table({data, columns}) {
 		},
 			useFilters,
 			useGlobalFilter,
-			useSortBy
+			useSortBy,
+			usePagination
 		);
 
-		const {globalFilter} = state;
+		// const {globalFilter} = state;
 
 	return (
 		<div className='table-container'>
@@ -59,7 +65,7 @@ export default function Table({data, columns}) {
 				</thead>
 				<tbody {...getTableBodyProps()}>
 					{
-						rows.map(row => {
+						page.map(row => {
 							prepareRow(row);
 							return (
 								<tr {...row.getRowProps()}>
@@ -77,6 +83,14 @@ export default function Table({data, columns}) {
 				</tbody>
 
 			</table>
+			<div id='table-buttons-container'>
+				<span>
+					Página {' '}
+					<strong>{pageIndex + 1} de {pageOptions.length}</strong>{' '}
+				</span>
+				<button id='previous-table-page' onClick={()=>previousPage()} disabled={!canPreviousPage}>Anterior</button>
+				<button id='next-table-page' onClick={()=>nextPage()} disabled={!canNextPage}>Siguiente</button>
+				</div>
 		</div>
 		
 	);
