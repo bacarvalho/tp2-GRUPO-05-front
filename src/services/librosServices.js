@@ -32,11 +32,15 @@ async function datosMisPrestamos() {
 
 }
 
-async function datosMisLibros() {
+async function datosMisLibros(token) {
 
   try {
-    const response = await instance.get('http://localhost:3000/mis_libros')
-    console.log('LLEGA', response);
+    const response = await instance.get('/user/mis_libros',   {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+ 
     if (response.status === 200) {
 
       console.log(response.data);
@@ -44,6 +48,7 @@ async function datosMisLibros() {
       return { status: true, data: libros };
     }
   } catch (error) {
+    console.log(error);
     return { status: false, data: error.message };
   }
 
