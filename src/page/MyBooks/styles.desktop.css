@@ -1,24 +1,14 @@
 @import url('./../../components/Layout/styles.desktop.css');
 
-.table-container {
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: left;
-}
-
 h1{
     text-align: center;
 }
 
-td{
-    text-align: left;
-    padding-top:10px;
-    padding-bottom:10px;
-    padding-left: 12px;
-    max-width: 10px;
-}
-
 th {
     text-align: center;
+}
+
+#header-row > th:nth-child(2), #filter > span > input{
+    max-width: 50%;
 }
 

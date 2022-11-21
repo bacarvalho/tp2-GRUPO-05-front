@@ -1,9 +1,16 @@
+import {format} from 'date-fns'
+
 export const COLUMNS = [
   {
-    // first group - TV Show
+    // primer grupo
     Header: "Libro",
-    // First group columns
+    // primer grupo de columnas
     columns: [
+      {
+        Header: 'Portada',
+        accessor: 'Libro.imagen_portada',
+        disableFilters: true
+      },
     {
       Header: 'ISBN',
       accessor: 'Libro.isbn'
@@ -17,29 +24,33 @@ export const COLUMNS = [
         accessor: 'Libro.titulo'
       },
       {
-        Header: 'Portada',
-        accessor: 'Libro.imagen_portada'
-      },
-      {
-        Header: 'Genero',
-        accessor: 'Libro.Genero.nombre'
-      },
-      {
-          Header: 'Editorial',
-          accessor: 'Libro.Editorial.nombre'
-        }
+        Header: 'Editorial',
+        accessor: 'Libro.Editorial.nombre'
+      }
       ]
   },
+  // segundo grupo de columnas: info de prestamo
   {
     Header: "Prestamos",
     columns: [
       {
         Header: "Fecha Desde",
-        accessor: "Prestamo.fecha_inicio"
+        accessor: "Prestamo.fecha_inicio",
+        Cell: ({ value }) => {
+          if (value == null) {
+            return 'N/A'
+          }
+          return format(new Date(value), 'dd/MM/yyyy')}
       },
       {
         Header: "Usuario",
-        accessor: "Prestamo.Usuario.nombre"
+        accessor: "Prestamo.Usuario.nombre",
+        Cell: ({value}) => {
+          if (value == null) {
+            return 'N/A'
+          }
+          return value;
+        }
       },
     ]
   }
