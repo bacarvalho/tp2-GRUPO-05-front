@@ -18,6 +18,7 @@ export const COLUMNS = [
         Header: 'Acción',
         accessor: 'action',
         disableFilters: true,
+        disableSortBy: true,
         Cell: props => (
           <span>
             <button className="act-btn" id='edit' onClick={() => handleEdit(props)}>Editar</button>
@@ -29,6 +30,7 @@ export const COLUMNS = [
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
         disableFilters: true,
+        disableSortBy: true,
         Cell: tableProps => (
           <img
             src={tableProps.row.original.Libro.imagen_portada}
