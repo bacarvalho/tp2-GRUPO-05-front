@@ -16,9 +16,13 @@ async function getLibros() {
   }
 }
 
-async function datosMisPrestamos() {
+async function datosMisPrestamos(token) {
   try {
-    const response = await instance.get('http://localhost:3000/mis_prestamos')
+    const response = await instance.get('/user/mis_prestamos', {
+      headers:{
+        'Authorization': `Bearer ${token}`
+      }
+    })
     console.log('LLEGA', response);
     if (response.status === 200) {
 
