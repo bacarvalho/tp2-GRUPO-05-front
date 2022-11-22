@@ -21,3 +21,8 @@
 p{
     font-family: 'Times New Roman', Times, serif;
 }
+
+#closer{
+    transform: rotate(180deg);
+    margin-top: -60px;
+}

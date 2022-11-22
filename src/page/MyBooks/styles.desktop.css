@@ -1,0 +1,27 @@
+@import url('./../../components/Layout/styles.desktop.css');
+
+h1{
+    text-align: center;
+}
+
+th {
+    text-align: center;
+}
+
+#header-row > th:nth-child(2), #filter > span > input{
+    max-width: 50%;
+}
+
+.buttons-container{
+    display: flex;
+    justify-content: center;
+}
+
+#add-book{
+    border-radius: 10px;
+    background-color: #284B2B;
+    color:whitesmoke;
+    padding: 5px 10px;
+    text-align: center;
+}
+
