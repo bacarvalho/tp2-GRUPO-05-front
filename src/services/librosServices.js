@@ -49,4 +49,17 @@ async function datosMisLibros() {
 
 }
 
-export { getLibros, datosMisPrestamos, datosMisLibros };
+async function getGeneros() {
+  console.log("llamada");
+  try {
+    const response = await instance.get('/book/generos')
+    if (response.status === 200) {
+      const generos = response.data;
+      return { status: true, data: generos };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
+
+export { getLibros, datosMisPrestamos, datosMisLibros ,getGeneros};
