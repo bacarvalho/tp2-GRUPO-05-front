@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './styles.desktop.css'
 
@@ -13,6 +13,7 @@ function getImage(imagenPhoto){
 }
 
 
+
 function CEBooks( /* {libro} */) {
 	const navigate = useNavigate();
 
@@ -22,6 +23,8 @@ function CEBooks( /* {libro} */) {
 		image: '',
 		editorial: 'a',
 	}
+
+	
 
     return(
 	<>
@@ -35,7 +38,8 @@ function CEBooks( /* {libro} */) {
         <div class="imagen">
             <img src={libro.image === '' ? 'images/NoPhoto.jpg' :  getImage(libro.image) } alt=""/> 
             <div class="imagenButton">
-                <button type="button" class="btn btn-success" >Subir foto de portada</button>
+				<label>Subi la foto de portada!</label>
+                <input type="file" id="imageFile" accept='image/png, image/jpg'  ></input>
             </div>
         </div>
         <div class="formulario">

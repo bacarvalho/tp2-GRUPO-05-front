@@ -43,7 +43,7 @@ function enviarForm(e){
   const editorial = document.querySelector('#editorial').value
   const Sinopsis = document.querySelector('#Sinopsis').value
   const Anio = document.querySelector('#Anio').value
-  
+  const Image = document.querySelector('#imageFile').value
   
   if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
