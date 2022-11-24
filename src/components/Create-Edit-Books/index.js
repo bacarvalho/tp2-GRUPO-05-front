@@ -1,15 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './styles.desktop.css'
-
-
-
 
 
 
 function getImage(imagenPhoto){
 	const image = 'images/' + imagenPhoto;
 	return image.toString();
+}
+
+function DisableNonImage(){
+	document.getElementById('image1').disabled = true;
+	document.getElementById("image1").style.display = "none";
+
+
 }
 
 
@@ -22,8 +26,38 @@ function CEBooks( /* {libro} */) {
 		titulo: '',
 		image: '',
 		editorial: 'a',
-	}
+	};
 
+	const [selectedFile, setSelectedFile] = useState();
+	const [preview, setPreview] = useState();
+  
+	// create a preview as a side effect, whenever selected file is changed
+	useEffect(() => {
+		if (!selectedFile) {
+			setPreview(undefined)
+			return
+		}
+  
+		const objectUrl = URL.createObjectURL(selectedFile)
+		setPreview(objectUrl)
+		libro.image = preview;
+		
+		DisableNonImage();
+
+		// free memory when ever this component is unmounted
+		return () => URL.revokeObjectURL(objectUrl)
+	}, [selectedFile])
+  
+
+  
+
+  const onSelectFile = (e) => {
+	if (!e.target.files || e.target.files.length === 0) {
+		setSelectedFile(undefined)
+		return
+	}
+	setSelectedFile(e.target.files[0])
+}
 	
 
     return(
@@ -36,10 +70,11 @@ function CEBooks( /* {libro} */) {
 
     <div class="container grid mt-5">
         <div class="imagen">
-            <img src={libro.image === '' ? 'images/NoPhoto.jpg' :  getImage(libro.image) } alt=""/> 
+            <img id="image1" src={libro.image === '' ? 'images/NoPhoto.jpg' :  getImage(libro.image) } alt=""/> 
+			{selectedFile &&  <img src={preview} width="416" height="416" /> }
+			<input type="file" id="imageFile" accept='image/png, image/jpg' onChange={onSelectFile} ></input>
             <div class="imagenButton">
 				<label>Subi la foto de portada!</label>
-                <input type="file" id="imageFile" accept='image/png, image/jpg'  ></input>
             </div>
         </div>
         <div class="formulario">
