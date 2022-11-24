@@ -16,7 +16,7 @@ function Header( {isLogged} ) {
       </div>
       <div className='header-links-container'>
         <Link to='/' className='header-link' >Inicio</Link> 
-        <Link to='/my_books' className='header-link' >Mis Libros</Link>
+        <Link to='/books/my_books' className='header-link' >Mis Libros</Link>
         <Link to='/my_loans' className='header-link' >Mis Prestamos</Link>
       </div>
       <div className='header-avatar-container'>

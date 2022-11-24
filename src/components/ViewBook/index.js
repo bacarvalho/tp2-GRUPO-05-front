@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import book from './book.json';
 import { devolverLibro, solicitarLibro } from '../../services/librosServices';
 import { getTokenUser, isLoggedUser } from "../../services/OauthServices";
 import { useNavigate } from "react-router-dom";
-
 
 function getImage(imagenPhoto) {
     const image = 'images/' + imagenPhoto;
@@ -11,14 +9,13 @@ function getImage(imagenPhoto) {
 }
 
 
-const ViewBook = () => {
+const ViewBook = ({ book }) => {
     const [isOk, setIsOk] = useState("");
     const [isDisable, setIsDisable] = useState(false);
     const navigate = useNavigate();
 
-
     async function refundBook() {
-        let response = await devolverLibro(book.id,);
+        let response = await devolverLibro(book.id, getTokenUser());
         console.log(response);
         if (response.status) {
             setIsDisable(false);
