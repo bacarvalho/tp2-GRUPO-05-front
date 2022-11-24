@@ -1,11 +1,21 @@
 import {format} from 'date-fns'
+import { eliminarLibro } from '../../services/librosServices';
+import { getTokenUser } from '../../services/OauthServices';
 
 const handleEdit = (cell) => {
   console.log("details ",cell?.row?.original);
 }
 
-const handleDelete = (cell) => {
+const handleDelete = async(cell) => {
   console.log("delete", cell?.row?.original);
+
+
+  let response = await eliminarLibro(cell.row.original.id, getTokenUser());
+  if (response.status) {
+    alert('Libro eliminado');
+    window.location.reload(true);
+    //TODO: Cambiar por un modal o algo mas lindo. Igualmente la funcionalidad está.
+  }
 }
 
 export const COLUMNS = [
