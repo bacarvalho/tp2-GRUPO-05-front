@@ -31,6 +31,9 @@ const ViewBook = ({ book }) => {
                 setIsDisable(true)
                 setIsOk(response.data);
             }
+            else{
+                setIsOk(response.data);
+            }
         }else{
            navigate('/login');
         }

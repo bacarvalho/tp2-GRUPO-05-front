@@ -51,7 +51,6 @@ async function datosMisLibros(token) {
       return { status: true, data: libros };
     }
   } catch (error) {
-    console.log(error);
     return { status: false, data: error.message };
   }
 
@@ -86,7 +85,7 @@ async function devolverLibro(bookId, token) {
       return { status: true, data: libros };
     }
   } catch (error) {
-    return { status: false, data: error.message };
+    return { status: false, data: error.response.data.error };
   }
 }
 
@@ -103,7 +102,7 @@ async function solicitarLibro(bookId, token) {
       return { status: true, data: texto };
     }
   } catch (error) {
-    return { status: false, data: error.message };
+    return { status: false, data: error.response.data.error };
   }
 }
 
