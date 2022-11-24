@@ -4,7 +4,6 @@ import Table from '../../components/Table';
 import Layout from '../../components/Layout';
 import { COLUMNS } from './MyLoansColumns'
 import CatalogButton from '../../components/Buttons/CatalogButton';
-import Cookies from "universal-cookie";
 
 import './styles.desktop.css'
 import { getTokenUser, isLoggedUser } from '../../services/OauthServices';

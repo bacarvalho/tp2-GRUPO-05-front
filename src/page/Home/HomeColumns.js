@@ -1,4 +1,4 @@
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const handleView= (cell, navigate, location) => {
   //Depende de lo que pase en el back, es posible que tengamos que hacer un request al detalle del libro para ver el dueño y si esta prestado.
