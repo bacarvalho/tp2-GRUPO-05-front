@@ -16,7 +16,6 @@ const ViewBook = ({ book }) => {
 
     async function refundBook() {
         let response = await devolverLibro(book.id, getTokenUser());
-        console.log(response);
         if (response.status) {
             setIsDisable(false);
             setIsOk(response.data);
@@ -26,7 +25,6 @@ const ViewBook = ({ book }) => {
     async function requestBook() {
         if (isLoggedUser()) {
             let response = await solicitarLibro(book.id, getTokenUser());
-            console.log(response);
             if (response.status) {
                 setIsDisable(true)
                 setIsOk(response.data);
