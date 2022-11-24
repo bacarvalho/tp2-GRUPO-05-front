@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import book from './book.json';
-import {devolverLibro, solicitarLibro} from '../../services/librosServices';
+import { devolverLibro, solicitarLibro } from '../../services/librosServices';
+import { getTokenUser, isLoggedUser } from "../../services/OauthServices";
+import { useNavigate } from "react-router-dom";
 
-//usar getDetailsBook();
 
 function getImage(imagenPhoto) {
     const image = 'images/' + imagenPhoto;
@@ -11,29 +12,33 @@ function getImage(imagenPhoto) {
 
 
 const ViewBook = () => {
-
     const [isOk, setIsOk] = useState("");
-    const [isDisable, setIsDisable] = useState(true);
+    const [isDisable, setIsDisable] = useState(false);
+    const navigate = useNavigate();
 
 
-    async function refundBook(){
-        let response = await devolverLibro(book.id, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoyLCJub21icmUiOiJsZWxlIn0sImlhdCI6MTY2OTI3MDg0NywiZXhwIjoxNjY5Mjc0NDQ3fQ.G3gpqLNG4YJ6d0fMvGK9gRjYtlg65NSyte09rYlc5WI");   
+    async function refundBook() {
+        let response = await devolverLibro(book.id,);
         console.log(response);
-        if(response.status) {
+        if (response.status) {
             setIsDisable(false);
             setIsOk(response.data);
         }
     };
-    
-    async function requestBook(){
-        let response = await solicitarLibro(book.id, "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoyLCJub21icmUiOiJsZWxlIn0sImlhdCI6MTY2OTI3MDg0NywiZXhwIjoxNjY5Mjc0NDQ3fQ.G3gpqLNG4YJ6d0fMvGK9gRjYtlg65NSyte09rYlc5WI");   
-        console.log(response);
-        if(response.status) {
-            setIsDisable(true)
-            setIsOk(response.data);
+
+    async function requestBook() {
+        if (isLoggedUser()) {
+            let response = await solicitarLibro(book.id, getTokenUser());
+            console.log(response);
+            if (response.status) {
+                setIsDisable(true)
+                setIsOk(response.data);
+            }
+        }else{
+           navigate('/login');
         }
     };
-    
+
 
     return (
         <div className="container">
@@ -59,8 +64,8 @@ const ViewBook = () => {
             </div>
             {
                 isDisable ?
-                <button className="action" onClick={refundBook}>Devolver Libro</button> :
-                <button className="action" onClick={requestBook}>Solicitar Libro</button>
+                    <button className="action" onClick={refundBook}>Devolver Libro</button> :
+                    <button className="action" onClick={requestBook}>Solicitar Libro</button>
             }
             {isOk !== '' && <div className="response">{isOk}</div>}
         </div>
