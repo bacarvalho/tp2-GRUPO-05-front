@@ -1,8 +1,10 @@
 import React from 'react';
+import ViewBook from '../../components/ViewBook';
 
 function View() {
-    return(
+    return (
         <>
+            <ViewBook />
         </>
     )
 }

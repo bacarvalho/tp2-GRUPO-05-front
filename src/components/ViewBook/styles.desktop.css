@@ -1,0 +1,8 @@
+.container-header{
+    display: flex;
+}
+
+.container-info {
+    display: flex;
+    flex-direction: column;
+}
