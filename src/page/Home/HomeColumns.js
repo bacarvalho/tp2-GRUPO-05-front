@@ -19,7 +19,7 @@ export const COLUMNS = () => {
       disableSortBy: true,
       Cell: props => (
         <span>
-          <button className="act-btn" id='view' onClick={() => handleView(props, navigate)}>Ver Detalle</button>
+          <button className="act-btn" id='view' onClick={() => handleView(props)}>Ver Detalle</button>
         </span>
       )
     },

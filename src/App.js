@@ -21,6 +21,7 @@ export default function router() {
         <Route path="/" element={<Home location />} />
         <Route path="/login" element={<Login />} />
         <Route path="/my_loans" element={<MyLoans />} />
+        <Route path="/my_loans/books/detail" element={<BookDetails />} />
         <Route path="/books/detail" element={<BookDetails />} />
         <Route path="/books/my_books" element={<MyBooks />} />
         <Route path="*" element={<NotFound/>} />

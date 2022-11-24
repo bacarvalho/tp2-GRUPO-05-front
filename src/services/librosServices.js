@@ -23,13 +23,12 @@ async function datosMisPrestamos(token) {
         'Authorization': `Bearer ${token}`
       }
     })
-    console.log('LLEGA', response);
-    if (response.status === 200) {
 
-      console.log(response.data);
+    if (response.status === 200) {
       const libros = response.data;
       return { status: true, data: libros };
     }
+    
   } catch (error) {
     return { status: false, data: error.message };
   }

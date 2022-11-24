@@ -26,10 +26,10 @@ function View() {
         <>
             <Layout>
                 <h1>Mis Préstamos</h1>
-                <div class='my-loans-container'>
+                <div className='my-loans-container'>
                     {isLoggedUser() ? (
                         <span>
-                            <Table data = {myData} columns = {COLUMNS}/>
+                            <Table data = {myData} columns = {COLUMNS()}/>
                             <CatalogButton />
                         </span>
                     ) : 

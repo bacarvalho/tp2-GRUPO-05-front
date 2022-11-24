@@ -37,7 +37,6 @@ const ViewBook = ({ book }) => {
         }
     };
 
-
     return (
         <div className="container">
             <div className="container-header">
