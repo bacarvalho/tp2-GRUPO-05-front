@@ -15,9 +15,9 @@ function Header( {isLogged} ) {
         <Libro />
       </div>
       <div className='header-links-container'>
-        <Link to='' className='header-link' >Inicio</Link> 
-        <Link to='' className='header-link' >Mis Libros</Link>
-        <Link to='' className='header-link' >Mis Prestamos</Link>
+        <Link to='/' className='header-link' >Inicio</Link> 
+        <Link to='/my_books' className='header-link' >Mis Libros</Link>
+        <Link to='/my_loans' className='header-link' >Mis Prestamos</Link>
       </div>
       <div className='header-avatar-container'>
           {!isLogged ? (
