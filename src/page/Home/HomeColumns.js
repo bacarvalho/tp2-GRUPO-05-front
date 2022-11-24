@@ -2,7 +2,6 @@ export const COLUMNS = [
     {
       Header: 'Portada',
       accessor: 'Libro.imagen_portada',
-      disableFilters: true,
       disableSortBy: true
     },
     {

@@ -1,18 +1,11 @@
 import React, { useMemo } from 'react'
-import { useTable, useSortBy, useGlobalFilter, useFilters, usePagination } from 'react-table'
+import { useTable, useSortBy, usePagination } from 'react-table'
 //import MOCK_DATA from './sampledata.json'
 import { GlobalFilter } from './GlobalFilter'
-import { ColumnFilter } from './ColumnFilter'
 
 import './styles.desktop.css'
 
 export default function Table({data, columns}) {
-
-	const defaultColumn = useMemo(()=>{
-		return {
-		  Filter: ColumnFilter
-		}
-	  },[]);
 
 	const {
 		getTableProps,
@@ -30,11 +23,8 @@ export default function Table({data, columns}) {
 		} =
 		useTable({
 			columns,
-			data,
-			defaultColumn
+			data
 		},
-			useFilters,
-			useGlobalFilter,
 			useSortBy,
 			usePagination
 		);
@@ -55,7 +45,6 @@ export default function Table({data, columns}) {
 										<span id="sorting">
 											{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}
 										</span>
-										<div id="filter">{column.canFilter ? column.render('Filter') : null}</div>
 									</th>
 								))
 							}

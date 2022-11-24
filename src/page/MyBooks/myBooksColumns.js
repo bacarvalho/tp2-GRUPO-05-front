@@ -17,7 +17,6 @@ export const COLUMNS = [
       {
         Header: 'Acción',
         accessor: 'action',
-        disableFilters: true,
         disableSortBy: true,
         Cell: props => (
           <span>
@@ -29,7 +28,6 @@ export const COLUMNS = [
       {
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
-        disableFilters: true,
         disableSortBy: true,
         Cell: tableProps => (
           <img
