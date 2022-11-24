@@ -52,10 +52,11 @@ function CEBooks({/*libro*/ }) {
 	function ImageSave() {
 
 		const file = preview;
-		const fileName = document.getElementById('#ISBN').defaultValue;
+		const fileName = document.getElementById('ISBNLibro').defaultValue;
 
 
 		const path = __dirname + '../../public/images' + fileName;
+
 		file.mv(path, (error) => {
 			if (error) {
 				console.error(error);
@@ -113,9 +114,9 @@ function CEBooks({/*libro*/ }) {
 							</div>
 							<div className="campo">
 								<label >Sinopsis:</label>
-								<input defaultValue={libro.sinopsis} type="textarea" className="Sinopsis" placeholder="Sinopsis" />
+								<input defaultValue={libro.sinopsis} type="textarea" className="Sinopsis" id="Sinopsis" placeholder="Sinopsis" />
 							</div>
-							<input defaultValue={libro.isbn} className="ISBNLibro" type="hidden" />
+							<input defaultValue={libro.isbn} className="ISBNLibro" id="ISBNLibro" type="hidden" />
 							<div id="buttonGuardar">
 								<button type="submit" className="btn btn-success" value="submit" onClick={() => { ImageSave() }} >Guardar</button>
 							</div>
