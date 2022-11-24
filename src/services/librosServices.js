@@ -74,4 +74,37 @@ async function getDetailsBook(bookId, token) {
   }
 }
 
-export { getLibros, datosMisPrestamos, datosMisLibros };
+async function devolverLibro(bookId, token) {
+  try {
+    const response = await instance.delete(`/prestamo/devolver/${bookId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
+
+
+async function solicitarLibro(bookId, token) {
+  try {
+    const response = await instance.get(`/prestamo/pedir/${bookId}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    if (response.status === 200) {
+      const texto = response.data;
+      return { status: true, data: texto };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
+
+export { getLibros, datosMisPrestamos, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro };
