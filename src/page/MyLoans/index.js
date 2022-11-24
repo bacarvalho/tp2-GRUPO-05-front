@@ -7,14 +7,13 @@ import CatalogButton from '../../components/Buttons/CatalogButton';
 import Cookies from "universal-cookie";
 
 import './styles.desktop.css'
-import { isLoggedUser } from '../../services/OauthServices';
+import { getTokenUser, isLoggedUser } from '../../services/OauthServices';
 
 function View() {
-    const cookie = new Cookies();
     const [myData, setMydata] = useState([]);
     useEffect(() => {
         const getData = async () => {
-            let response = await datosMisPrestamos(cookie.get('login'));   
+            let response = await datosMisPrestamos(getTokenUser());   
             if(response.status) {
                 setMydata(response.data);
             }
