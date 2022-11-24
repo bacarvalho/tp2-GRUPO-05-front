@@ -1,0 +1,107 @@
+[
+    {
+      "Libro": {
+        "isbn": 1,
+        "titulo": "All the Vermeers in New York",
+        "imagen_portada": "sodales",
+        "Genero": {
+          "nombre": "sci-fi"
+        },
+        "Autor": {
+          "nombre": "aire"
+        },
+        "Editorial": {
+          "nombre": "gama"
+        }
+      },
+      "Prestamo": null
+    },
+    {
+      "Libro": {
+        "isbn": 3,
+        "titulo": "American Gun",
+        "imagen_portada": "aliquam",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "aire"
+        },
+        "Editorial": {
+          "nombre": "gama"
+        }
+      },
+      "Prestamo": {
+        "fecha_inicio": "2021-02-04T21:28:25.000Z",
+        "Usuario": {
+          "nombre": "lili"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "isbn": 5,
+        "titulo": "Electrick Children",
+        "imagen_portada": "vestibulum",
+        "Genero": {
+          "nombre": "romance"
+        },
+        "Autor": {
+          "nombre": "berges"
+        },
+        "Editorial": {
+          "nombre": "gama"
+        }
+      },
+      "Prestamo": {
+        "fecha_inicio": "2021-07-16T19:37:20.000Z",
+        "Usuario": {
+          "nombre": "lolo"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "isbn": 4,
+        "titulo": "Bastards, The (Los bastardos)",
+        "imagen_portada": "ut",
+        "Genero": {
+          "nombre": "crimen"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        },
+        "Editorial": {
+          "nombre": "omega"
+        }
+      },
+      "Prestamo": {
+        "fecha_inicio": "2021-11-18T12:45:54.000Z",
+        "Usuario": {
+          "nombre": "lele"
+        }
+      }
+    },
+    {
+      "Libro": {
+        "isbn": 2,
+        "titulo": "Beijing Taxi",
+        "imagen_portada": "urna",
+        "Genero": {
+          "nombre": "comedia"
+        },
+        "Autor": {
+          "nombre": "sabado"
+        },
+        "Editorial": {
+          "nombre": "beta"
+        }
+      },
+      "Prestamo": {
+        "fecha_inicio": "2021-08-31T04:16:26.000Z",
+        "Usuario": {
+          "nombre": "lili"
+        }
+      }
+    }
+  ]
