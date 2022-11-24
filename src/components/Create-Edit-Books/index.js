@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './styles.desktop.css'
+import {enviarForm} from './SaveNewBook';
 
 
 
@@ -18,18 +19,18 @@ function DisableNonImage(){
 
 
 
-function CEBooks( /* {libro} */) {
+function CEBooks({/*libro*/}) {
 	const navigate = useNavigate();
-
-	const libro = {
-		isbn: '123',
-		titulo: '',
-		image: '',
-		editorial: 'a',
-	};
-
 	const [selectedFile, setSelectedFile] = useState();
 	const [preview, setPreview] = useState();
+
+	const libro = {
+		image: '',
+		isbn: '123',
+
+
+
+	}
   
 	// create a preview as a side effect, whenever selected file is changed
 	useEffect(() => {
@@ -51,13 +52,32 @@ function CEBooks( /* {libro} */) {
 
   
 
-  const onSelectFile = (e) => {
+  	const onSelectFile = (e) => {
 	if (!e.target.files || e.target.files.length === 0) {
 		setSelectedFile(undefined)
 		return
 	}
 	setSelectedFile(e.target.files[0])
-}
+	}
+
+
+	function ImageSave(){
+
+		const file = preview;
+		const fileName = document.getElementById('#ISBN').defaultValue;
+	
+	
+		const path = __dirname + '../../public/images' + fileName;
+		file.mv(path, (error) => {
+			if (error) {
+				console.error(error);
+			};
+			
+			return
+			
+		});
+	}
+
 	
 
     return(
@@ -78,7 +98,7 @@ function CEBooks( /* {libro} */) {
             </div>
         </div>
         <div class="formulario">
-            <form id="form">
+            <form id="form" onSubmit={enviarForm}>
 				<div class="campo">
 						<label for="ISBN">ISBN:</label>
 						<input defaultValue={libro.isbn} type="text" id="ISBN" placeholder="ISBN" required/>
@@ -107,8 +127,9 @@ function CEBooks( /* {libro} */) {
 					<label for="Sinopsis">Sinopsis:</label>
 					<input  defaultValue={libro.sinopsis} type="textarea" class="Sinopsis" placeholder="Sinopsis"/>
 				</div>
+				<input  defaultValue={libro.isbn}  class="ISBNLibro" type="hidden"/>
 				<div id="buttonGuardar">
-                <button type="submit" class="btn btn-success" >Guardar</button>
+                <button type="submit" class="btn btn-success" value="submit" onClick={() => {ImageSave()} } >Guardar</button>
 				</div>
 				<div id="buttonVolver">
                 <button type="button" class="btn btn-success" onClick={() => navigate(-1)} >Volver y descartar</button>
@@ -117,6 +138,7 @@ function CEBooks( /* {libro} */) {
 		</div>
     </div>
 	</div>
+	<script src="./SaveNewBook.js"></script>
 	</>
     )
 

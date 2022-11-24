@@ -80,4 +80,4 @@ function editarLibro(libro){
     
 }
 
-export { getLibros, datosMisPrestamos, datosMisLibros, agregarLibro};
+export { getLibros, datosMisPrestamos, datosMisLibros, agregarLibro, editarLibro};

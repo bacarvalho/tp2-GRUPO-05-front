@@ -1,12 +1,8 @@
-import { agregarLibro } from "../../services/librosServices";
+import { agregarLibro, editarLibro } from "../../services/librosServices";
 
 const formulario = document.querySelector('#form')
 
 
-eventListeners()
-function eventListeners(){
-  formulario.addEventListener('submit', enviarForm)
-}
 
 class Interfaz{
 
@@ -34,16 +30,17 @@ class Interfaz{
 const interfaz = new Interfaz()
 
 function enviarForm(e){
-  e.preventDefault()
-
-  const ISBN = document.querySelector('#ISBN').value  
-  const titulo = document.querySelector('#Titulo').value  
-  const autor = document.querySelector('#autor').value 
-  const genero = document.querySelector('#genero').value 
-  const editorial = document.querySelector('#editorial').value
-  const Sinopsis = document.querySelector('#Sinopsis').value
-  const Anio = document.querySelector('#Anio').value
-  const Image = document.querySelector('#imageFile').value
+  e.preventDefault();
+  console.log("Llega")
+  const ISBNLibro = document.getElementById('ISBNLibro').defaultValue  
+  const ISBN = document.getElementById('#ISBN').defaultValue  
+  const titulo = document.getElementById('#Titulo').defaultValue  
+  const autor = document.getElementById('#autor').defaultValue 
+  const genero = document.getElementById('#genero').defaultValue 
+  const editorial = document.getElementById('#editorial').defaultValue
+  const Sinopsis = document.getElementById('#Sinopsis').defaultValue
+  const Anio = document.getElementById('#Anio').defaultValue
+  const Image = document.getElementById('#imageFile').defaultValue
   
   if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
@@ -60,13 +57,18 @@ function enviarForm(e){
     anio:Anio,
     
   }
-  
-  if (libro.isbn === ''){
-     agregarLibro(libroObj);
-    formulario.reset()
+  //Cambiar BACKEND para que agergarLibro haga todo.
+  if (ISBNLibro === ''){
+    console.log(libroObj);
+    agregarLibro(libroObj);
+    //formulario.reset()
   } else {
-  //	editarLibro(); //Endpoint de editar.
+    console.log('else');
+
+    editarLibro(libroObj);
   }
   
   
 }
+
+export {enviarForm};
