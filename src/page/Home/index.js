@@ -4,7 +4,7 @@ import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
 import { COLUMNS } from './HomeColumns'
 import { Quote } from '../../components/Quote'
-
+import {Filters} from '../../components/Table/Filters';
 
 
 function View() {
@@ -23,6 +23,7 @@ function View() {
         <>
             <Layout>
                 <Quote />
+                <Filters columns = {COLUMNS}/>
                 <Table data = {mydata} columns = {COLUMNS}/>
             </Layout>
         </>
