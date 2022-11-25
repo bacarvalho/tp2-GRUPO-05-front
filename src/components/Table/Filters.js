@@ -11,14 +11,16 @@ export const Filters = ({columns}) =>{
                     if (! column.disableFilterBy) {
                         return ( 
                             <>
-                            <label for='`${column.Header}`'>{column.Header}: </label>
-                            <span></span>
-                            <input type='text' id=' `${column.Header}`'></input>
-
+                                <label for='`${column.Header}`'>{column.Header}: </label>
+                                <span></span>
+                                <input type='text' id=' `${column.Header}`'></input>
                             </>
                         )
                     }
                 })}
+                <div className='button-container'>
+                    <button id='submit-filters'>Enviar</button>
+                </div>
             </form>
         </div>
     </div>
