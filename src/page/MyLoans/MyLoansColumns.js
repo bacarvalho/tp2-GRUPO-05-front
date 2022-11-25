@@ -11,7 +11,7 @@
  export const COLUMNS = [
     {
       Header: 'Acción',
-      disableFilter: true,
+      disableFilterBy: true,
       disableSortBy: true,
       Cell: props => (
         <span>
@@ -23,7 +23,7 @@
     {
       Header: 'Portada',
       accessor: 'Ejemplar.Libro.imagen_portada',
-      disableFilters: true,
+      disableFilterBy: true,
       disableSortBy: true,
       Cell: tableProps => (
         <img
@@ -56,6 +56,7 @@
   {
     Header: 'Fecha Desde',
     accessor: 'fecha_inicio',
+    disableFilterBy: true,
     Cell: ({ value }) => {
       if (value == null) {
         return 'N/A'
