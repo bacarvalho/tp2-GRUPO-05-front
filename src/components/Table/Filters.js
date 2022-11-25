@@ -1,25 +1,28 @@
 import React, {useState} from 'react';
+import { searchService }  from '../../services/librosServices'
+
+const mymap =new Map();
 
 async function handleSubmit(e) {
     e.preventDefault();
-	const response = await LoginUser(username, password);
-	if(response.status) {
-		const cookie = new Cookies();
-		cookie.set('login', response.data);
-		navigate("/");
-	} else {
-		setIsDisabled(false);
-		setErrorMessage(response.error.message);
-	}
+    '/?'
+
+    const response = await searchService(queryParams);
+	//const response = await LoginUser(username, password);
+	// if(response.status) {
+	// 	const cookie = new Cookies();
+	// 	cookie.set('login', response.data);
+	// 	navigate("/");
+	// } else {
+	// 	setIsDisabled(false);
+	// 	setErrorMessage(response.error.message);
+	// }
+    console.log('triggered event');
+    console.log(mymap);
+
   };
 
 export const Filters = ({columns}) =>{
-    const [isbn, setIsbn] = useState("");
-    const [author, setAuthor] = useState("");
-    const [title, setTitle] = useState("");
-    const [publisher, setPublisher] = useState('');
-    const [genre, setGenre] = useState('');
-
 
     console.log(columns);
     return (
@@ -33,7 +36,7 @@ export const Filters = ({columns}) =>{
                             <>
                                 <label for='`${column.Header}`'>{column.Header}: </label>
                                 <span></span>
-                                <input type='text' id='`${column.Header}`' onChange={(e) => setusername(e.target.value)}></input>
+                                <input type='text' id='`${column.Header}`' onChange={(e) => mymap.set (`${column.Header}`, e.target.value)}></input>
                             </>
                         )
                     }

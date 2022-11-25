@@ -4,6 +4,18 @@ const instance = axios.create({
   baseURL: 'http://localhost:3000'
 });
 
+async function searchService(pathParams) {
+  try {
+    const response = await instance.get(pathParams)
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
+
 async function getLibros() {
   try {
     const response = await instance.get('/')
@@ -58,4 +70,4 @@ async function datosMisLibros(token) {
 
 }
 
-export { getLibros, datosMisPrestamos, datosMisLibros };
+export { getLibros, datosMisPrestamos, datosMisLibros, searchService };
