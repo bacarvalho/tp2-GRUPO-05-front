@@ -1,24 +1,22 @@
 import React from 'react';
-import { searchMisLibros }  from '../../services/librosServices'
+import { searchService }  from '../../services/librosServices'
 
 
-const Filters2 = ({columns, setMydata, token, presetPath}) =>{
+const Filters = ({columns, setMydata}) =>{
     const mymap =new Map();
 
     async function handleSubmit(e) {
-        console.log("token",token);
+
         e.preventDefault();
 
         const data = [...mymap.entries()];
-        let asString = '?'+data
+        let asString = '/?'+data
             .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)
             .join('&');
         asString= asString.toLowerCase();
         console.log(asString);
-        let mypath = [presetPath, asString].join('/');
-        console.log('myPath', mypath);
 
-        let response = await searchMisLibros(token, mypath);   
+        let response = await searchService(asString);   
              if(response.status) {
                 setMydata(response.data);
             }
@@ -52,4 +50,4 @@ const Filters2 = ({columns, setMydata, token, presetPath}) =>{
 
 }
 
-export {Filters2}
+export {Filters}

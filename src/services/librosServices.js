@@ -5,6 +5,7 @@ const instance = axios.create({
 });
 
 async function searchService(pathParams) {
+
   try {
     const response = await instance.get(pathParams)
     if (response.status === 200) {
@@ -48,6 +49,28 @@ async function datosMisPrestamos(token) {
 
 }
 
+async function searchMisLibros(token, queryParams) {
+  
+  try {
+    const response = await instance.get(queryParams,   {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+ 
+    if (response.status === 200) {
+
+      console.log(response.data);
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    console.log(error);
+    return { status: false, data: error.message };
+  }
+
+}
+
 async function datosMisLibros(token) {
 
   try {
@@ -70,4 +93,4 @@ async function datosMisLibros(token) {
 
 }
 
-export { getLibros, datosMisPrestamos, datosMisLibros, searchService };
+export { getLibros, datosMisPrestamos, datosMisLibros, searchService, searchMisLibros };
