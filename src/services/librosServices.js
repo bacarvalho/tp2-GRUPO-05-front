@@ -158,7 +158,7 @@ async function solicitarLibro(bookId, token) {
       return { status: true, data: texto };
     }
   } catch (error) {
-    return { status: false, data: error.response.data.error };
+    return { status: false, data: error.response.data.error, statusError: error.response.status };
   }
 }
 

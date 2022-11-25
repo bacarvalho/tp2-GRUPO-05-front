@@ -1,31 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { devolverLibro, solicitarLibro } from '../../services/librosServices';
-import { getTokenUser, isLoggedUser } from "../../services/OauthServices";
+import { getTokenUser, isLoggedUser, getUserName } from "../../services/OauthServices";
 import { useNavigate } from "react-router-dom";
 
 const ViewBook = ({ book }) => {
 
     const [isOk, setIsOk] = useState("");
-    const [isDisable, setIsDisable] = useState(false);
+    const [isDisable, setIsDisable] = useState(true);
+    const [buttonDisable, setButtonDisable] = useState(true);
+
     const navigate = useNavigate();
+
+    useEffect(() => {
+        const value = book.Prestamo === null ? true : false;
+        setIsDisable(value);
+    }, [book]);
 
     async function refundBook() {
         let response = await devolverLibro(book.id, getTokenUser());
         if (response.status) {
-            setIsDisable(false);
+            setIsDisable(!isDisable);
             setIsOk(response.data);
         }
     };
-
     async function requestBook() {
         if (isLoggedUser()) {
             let response = await solicitarLibro(book.id, getTokenUser());
-            if (response.status) {
-                setIsDisable(true)
-                setIsOk(response.data);
-            }
-            else{
-                setIsOk(response.data);
+            console.log('RESPONSE', response);
+            if(response.statusError === 403){
+                navigate('/login');
+            }else {
+                if (response.status) {
+                    setIsDisable(!isDisable);
+                    setIsOk(response.data);
+                }
+                else{
+                    setIsOk(response.data);
+                }
             }
         }else{
            navigate('/login');
@@ -55,8 +66,9 @@ const ViewBook = ({ book }) => {
             </div>
             {
                 isDisable ?
-                    <button className="action" onClick={refundBook}>Devolver Libro</button> :
-                    <button className="action" onClick={requestBook}>Solicitar Libro</button>
+                <button className="action" onClick={requestBook}>Solicitar Libro</button> : (
+                    buttonDisable ? <button className="action" onClick={refundBook}>Devolver Libro</button> : <></>
+                )
             }
             {isOk !== '' && <div className="response">{isOk}</div>}
         </div>

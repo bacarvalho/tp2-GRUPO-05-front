@@ -3,7 +3,6 @@ import ViewBook from '../../components/ViewBook';
 import { useLocation } from "react-router-dom";
 import { getDetailsBook } from '../../services/librosServices';
 import { useEffect, useState } from 'react';
-import { getTokenUser } from '../../services/OauthServices';
 
 function View() {
 
@@ -32,7 +31,7 @@ function View() {
 
     useEffect(() => {
         const getData = async () => {
-            let response = await getDetailsBook(location.state.data.id, getTokenUser());
+            let response = await getDetailsBook(location.state.data.id);
             if (response.status) {
                 setMydata(response.data);
             }

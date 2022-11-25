@@ -37,4 +37,9 @@ function getTokenUser(){
   return null;
 }
 
-export {LoginUser, isLoggedUser, getTokenUser}
+function getUserName(){
+  const cookie = new Cookies();
+  return cookie.get('user');
+}
+
+export {LoginUser, isLoggedUser, getTokenUser, getUserName}
