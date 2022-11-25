@@ -29,17 +29,25 @@ const interfaz = new Interfaz()
 
 function enviarForm(e){
   e.preventDefault();
-  console.log("Llega")
-  const ISBNLibro = document.getElementById('ISBNLibro').defaultValue
-  const ISBN = document.getElementById('ISBN').defaultValue  
-  const titulo = document.getElementById('Titulo').defaultValue  
-  const autor = document.getElementById('autor').defaultValue 
-  const genero = document.getElementById('genero').defaultValue 
-  const editorial = document.getElementById('editorial').defaultValue
-  const Sinopsis = document.getElementById('Sinopsis').defaultValue
-  const Anio = document.getElementById('Anio').defaultValue
-  const Image = document.getElementById('imageFile').defaultValue
-  
+  const ISBNLibro = document.getElementById('ISBNLibro').value
+  const ISBN = document.getElementById('ISBN').value  
+  const titulo = document.getElementById('Titulo').value  
+  const autor = document.getElementById('autor').value 
+  const genero = document.getElementById('genero').value 
+  const editorial = document.getElementById('editorial').value
+  const Sinopsis = document.getElementById('Sinopsis').value
+  const Anio = document.getElementById('Anio').value
+  const Image = document.getElementById('imageFile').value
+
+  console.log(ISBN);
+  console.log(titulo);
+  console.log(autor);
+  console.log(genero);
+  console.log(editorial);
+  console.log(Sinopsis);
+  console.log(Anio);
+  console.log(Image);
+
   if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
     return 
@@ -56,14 +64,9 @@ function enviarForm(e){
     
   }
 
-  //Cambiar BACKEND para que agergarLibro haga todo.
   if (ISBNLibro === ''){
-    console.log(libroObj);
     agregarLibro(libroObj);
-    //formulario.reset()
   } else {
-    console.log('else');
-
     editarLibro(libroObj);
   }
   

@@ -52,10 +52,10 @@ function CEBooks({/*libro*/ }) {
 	function ImageSave() {
 
 		const file = preview;
-		const fileName = document.getElementById('ISBNLibro').defaultValue;
+		const fileName = document.getElementById('ISBNLibro').value;
+		debugger
 
-
-		const path = __dirname + '../../public/images' + fileName;
+		const path = __dirname + '../../public/images/' + fileName;
 
 		file.mv(path, (error) => {
 			if (error) {
