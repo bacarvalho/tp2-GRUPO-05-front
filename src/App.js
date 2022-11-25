@@ -10,6 +10,8 @@ import BookDetails from './page/BookDetails'
 import Login from './page/Login'
 import MyLoans from './page/MyLoans'
 import MyBooks from './page/MyBooks'
+import CEBooks from './page/EditCreateBooks'
+
 export default function router() {
   
   
@@ -24,6 +26,8 @@ export default function router() {
         <Route path="/my_loans/books/detail" element={<BookDetails />} />
         <Route path="/books/detail" element={<BookDetails />} />
         <Route path="/books/my_books" element={<MyBooks />} />
+        <Route path="/page/EditCreateBooks" element={<CEBooks />} />
+
         <Route path="*" element={<NotFound/>} />
       </Routes>
       </div>

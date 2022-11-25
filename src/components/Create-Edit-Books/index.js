@@ -23,6 +23,7 @@ function CEBooks({/*libro*/ }) {
 	const libro = {
 		image: '',
 		isbn: '123',
+		id: '1',
 	}
 
 	useEffect(() => {
@@ -117,6 +118,7 @@ function CEBooks({/*libro*/ }) {
 								<input defaultValue={libro.sinopsis} type="textarea" className="Sinopsis" id="Sinopsis" placeholder="Sinopsis" />
 							</div>
 							<input defaultValue={libro.isbn} className="ISBNLibro" id="ISBNLibro" type="hidden" />
+							<input defaultValue={libro.id} className="idEjemplar" id="idEjemplar" type="hidden" />
 							<div id="buttonGuardar">
 								<button type="submit" className="btn btn-success" value="submit" onClick={() => { ImageSave() }} >Guardar</button>
 							</div>

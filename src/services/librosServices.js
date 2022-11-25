@@ -53,6 +53,42 @@ async function datosMisLibros(token) {
 
 }
 
+async function agregarLibro(libro, token) {
+
+  try {
+    const response = await instance.post(`/user/crear_libro/${libro.isbn}`, libro,  {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+
+}
+
+async function editarLibro(libro, token) {
+
+  try {
+    const response = await instance.post(`/user/editar_libro/${libro.isbn}`, libro,  {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+
+}
+
 
 async function getDetailsBook(bookId, token) {
   try {
@@ -120,4 +156,4 @@ async function eliminarLibro(bookId, token) {
 }
 
 
-export { getLibros, datosMisPrestamos, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro, eliminarLibro };
+export { getLibros, datosMisPrestamos, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro, eliminarLibro, agregarLibro, editarLibro };

@@ -1,4 +1,6 @@
 import { agregarLibro, editarLibro } from "../../services/librosServices";
+import { getTokenUser } from "../../services/OauthServices";
+ 
 
 const formulario = document.querySelector('form')
 
@@ -30,6 +32,7 @@ const interfaz = new Interfaz()
 function enviarForm(e){
   e.preventDefault();
   const ISBNLibro = document.getElementById('ISBNLibro').value
+  const id = document.getElementById('idEjemplar').value
   const ISBN = document.getElementById('ISBN').value  
   const titulo = document.getElementById('Titulo').value  
   const autor = document.getElementById('autor').value 
@@ -47,6 +50,20 @@ function enviarForm(e){
   console.log(Sinopsis);
   console.log(Anio);
   console.log(Image);
+  console.log(Image.name);
+  console.log(id);
+  
+  var file = new File([Image], Image.name);
+  const path = __dirname + '../../public/images/' + fileName;
+
+  file.mv(path, (error) => {
+    if (error) {
+      console.error(error);
+    };
+
+    return
+
+  });
 
   if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
@@ -54,20 +71,22 @@ function enviarForm(e){
   }
   
   const libroObj = {
-    ISBN:ISBN,
+    isbn:ISBN,
     titulo:titulo,
     id_autor:autor,
     id_genero:genero,
     id_editorial:editorial,
+    imagen_portada: Image.name,
     sinopsis:Sinopsis,
     anio:Anio,
+    id: id,
     
   }
 
   if (ISBNLibro === ''){
-    agregarLibro(libroObj);
+    agregarLibro(libroObj,getTokenUser());
   } else {
-    editarLibro(libroObj);
+    editarLibro(libroObj,getTokenUser());
   }
   
   
