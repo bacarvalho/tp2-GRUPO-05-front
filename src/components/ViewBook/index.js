@@ -35,7 +35,7 @@ const ViewBook = ({ book }) => {
         <div className="container">
             <div className="container-header">
                 <div className="container-picture">
-                    <img id="image1" src='imagenes_portadas/1.jpg' />
+                    <img id="image1" src={`/imagenes_portadas/${book.Libro.isbn}.jpg`} />
                 </div>
                 <div className="container-info">
                     <span className="info-field">Titulo: {book.Libro.titulo}</span>
@@ -45,10 +45,12 @@ const ViewBook = ({ book }) => {
                     <span className="info-field">Año: {book.Libro.anio}</span>
                     <span className="info-field">ISBN: {book.Libro.isbn}</span>
                     <span className="info-field">Dueño del Libro: </span>
+                    Sarasa: {book.Libro.sinopsis}
                 </div>
             </div>
             <div>
                 <label>Sinopsis</label>
+              
                 <div className="box-description">
                     {book.Libro.sinopsis}
                 </div>
