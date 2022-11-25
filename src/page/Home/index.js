@@ -17,13 +17,13 @@ function View() {
             }
         }
         getData();
-    }, []);
+    }, []); 
 
     return (
         <>
             <Layout>
                 <Quote />
-                <Table data = {mydata} columns = {COLUMNS}/>
+                <Table data = {mydata} columns = {COLUMNS()}/>
             </Layout>
         </>
     )

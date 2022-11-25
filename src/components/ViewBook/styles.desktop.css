@@ -1,0 +1,36 @@
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-picture {
+    margin: 20px;
+}
+
+.container-header{
+    display: flex;
+}
+
+.container-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.box-description{
+    border-style: groove;
+    padding: 5px;
+}
+
+.action{
+    margin: 10px;
+}
+
+.info-field{
+    margin: 5px;
+}
+
+.response{
+    color: red;
+}
