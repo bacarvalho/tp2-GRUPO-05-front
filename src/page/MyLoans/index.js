@@ -5,6 +5,7 @@ import Layout from '../../components/Layout';
 import { COLUMNS } from './MyLoansColumns'
 import CatalogButton from '../../components/Buttons/CatalogButton';
 import Cookies from "universal-cookie";
+import {Filters} from '../../components/Table/Filters'
 
 import './styles.desktop.css'
 import { isLoggedUser } from '../../services/OauthServices';
@@ -29,6 +30,7 @@ function View() {
                 <div class='my-loans-container'>
                     {isLoggedUser() ? (
                         <span>
+                             <Filters columns = {COLUMNS} setMydata={setMydata} />
                             <Table data = {myData} columns = {COLUMNS}/>
                             <CatalogButton />
                         </span>
