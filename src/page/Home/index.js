@@ -18,7 +18,7 @@ function View() {
             }
         }
         getData();
-    }, []);
+    }, []); 
 
 
     return (
@@ -26,7 +26,7 @@ function View() {
             <Layout>
                 <Quote />
                 <Filters columns = {COLUMNS} setMydata={setMydata} token={null}/>
-                <Table data = {mydata} columns = {COLUMNS}/>
+                <Table data = {mydata} columns = {COLUMNS()}/>
             </Layout>
         </>
     )

@@ -28,4 +28,13 @@ function isLoggedUser(){
   return false;
 }
 
-export {LoginUser, isLoggedUser}
+function getTokenUser(){
+  const cookie = new Cookies();
+  const reponse = cookie.get('login');
+  if(reponse){
+      return reponse;
+  }
+  return null;
+}
+
+export {LoginUser, isLoggedUser, getTokenUser}

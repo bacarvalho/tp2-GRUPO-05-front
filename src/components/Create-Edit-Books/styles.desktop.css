@@ -1,0 +1,84 @@
+
+.body{
+    font-family: 'Roboto', sans-serif;
+    background-color: #c07d3e;
+}
+
+.formulario{
+    max-width:600px;
+    margin: auto;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.campo{
+    display:flex;
+    margin-bottom:2rem;
+    align-items: center;
+    
+}
+
+.campo label{
+    flex-basis: 10rem;
+    padding-right: 10px;
+
+}
+
+input{
+    border:1px solid #e1e1e1;
+    
+}
+
+input.Sinopsis{
+    border:1px solid #e1e1e1;
+
+    
+}
+
+input.Sinopsis.focus{
+    height: 100px;
+
+    
+}
+
+#buttonGuardar{
+    display: grid;
+}
+#buttonVolver{
+    padding-top: 10px;
+    display: grid;
+
+}
+
+.grid{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    background-color:#ffffff85;
+    justify-content: center;
+    height: 600px;
+    padding: 50px;
+}
+
+.fondo{
+    background-color:#ffffff83;
+}
+
+.color{
+    color:#e77e1b;
+    font-weight:bolder;
+}
+
+.imagenButton{
+    padding-top: 10px;
+    display:grid;
+    align-items: center;
+
+}
+
+.imagen{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    justify-content: center;
+}
