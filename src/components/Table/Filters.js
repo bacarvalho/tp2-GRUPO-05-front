@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { searchService }  from '../../services/librosServices'
 
 const Filters = ({columns, setMydata}) =>{
@@ -20,7 +20,7 @@ const Filters = ({columns, setMydata}) =>{
              if(response.status) {
                 setMydata(response.data);
             }
-    
+        
     };
 
     return (
