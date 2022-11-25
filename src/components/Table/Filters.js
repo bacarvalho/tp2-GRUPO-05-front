@@ -34,7 +34,7 @@ const Filters = ({columns, setMydata, token, presetPath}) =>{
                         if (! column.disableFilterBy) {
                             return ( 
                                 <>
-                                    <label for='`${column.Header}`'>{column.Header}: </label>
+                                    <label>{column.Header}: </label>
                                     <span></span>
                                     <input className='filter-input' type='text' id='`${column.Header}`' onChange={(e) => mymap.set (`${column.Header}`, e.target.value)}></input>
                                 </>

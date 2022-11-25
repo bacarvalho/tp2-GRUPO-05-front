@@ -28,7 +28,7 @@ function View() {
                 <div className='my-loans-container'>
                     {isLoggedUser() ? (
                         <span>
-                            <Filters columns = {COLUMNS} setMydata={setMydata} token={getTokenUser()} presetPath={'/user/mis_prestamos'}/>
+                            <Filters columns = {COLUMNS()} setMydata={setMydata} token={getTokenUser()} presetPath={'/user/mis_prestamos'}/>
                             <Table data = {myData} columns = {COLUMNS()}/>
                             <CatalogButton />
                         </span>

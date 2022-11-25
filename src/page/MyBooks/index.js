@@ -33,7 +33,7 @@ function View() {
                 <div className='my-books-container'>
                     {isLoggedUser() ? (
                     <span>
-                        <Filters columns = {COLUMNS} setMydata={setMydata} token={getTokenUser()} presetPath={'/user/mis_libros'} />
+                        <Filters columns = {COLUMNS()} setMydata={setMydata} token={getTokenUser()} presetPath={'/user/mis_libros'} />
                         <Table data = {myData} columns = {COLUMNS()}/>
                         <div className='buttons-container'>
                         <button type="submit" id='add-book' onClick={routeChange}>Nuevo Libro</button>

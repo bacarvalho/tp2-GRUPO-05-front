@@ -25,7 +25,7 @@ function View() {
         <>
             <Layout>
                 <Quote />
-                <Filters columns = {COLUMNS} setMydata={setMydata} token={null}/>
+                <Filters columns = {COLUMNS()} setMydata={setMydata} token={null}/>
                 <Table data = {mydata} columns = {COLUMNS()}/>
             </Layout>
         </>

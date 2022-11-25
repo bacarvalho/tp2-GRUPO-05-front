@@ -52,7 +52,7 @@ return([
         disableFilterBy: true,
         Cell: tableProps => (
           <img
-            src={tableProps.row.original.Libro.imagen_portada}
+            src={`/imagenes_portadas/${tableProps.row.original.Libro.isbn}.jpg`}
             width={60}
             alt='Portada'
           />
