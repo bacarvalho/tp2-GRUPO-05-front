@@ -4,6 +4,7 @@ import { getTokenUser, isLoggedUser } from "../../services/OauthServices";
 import { useNavigate } from "react-router-dom";
 
 const ViewBook = ({ book }) => {
+
     const [isOk, setIsOk] = useState("");
     const [isDisable, setIsDisable] = useState(false);
     const navigate = useNavigate();
@@ -44,13 +45,10 @@ const ViewBook = ({ book }) => {
                     <span className="info-field">Editorial: {book.Libro.Editorial.nombre}</span>
                     <span className="info-field">Año: {book.Libro.anio}</span>
                     <span className="info-field">ISBN: {book.Libro.isbn}</span>
-                    <span className="info-field">Dueño del Libro: </span>
-                    Sarasa: {book.Libro.sinopsis}
+                    <span className="info-field">Dueño del Libro: {book.Usuario.nombre} </span>
                 </div>
             </div>
-            <div>
-                <label>Sinopsis</label>
-              
+            <div>              
                 <div className="box-description">
                     {book.Libro.sinopsis}
                 </div>
