@@ -7,7 +7,7 @@ import './styles.desktop.css'
 import { datosMisLibros } from '../../services/librosServices'
 import Cookies from "universal-cookie";
 import { isLoggedUser } from '../../services/OauthServices';
-import {Filters2} from '../../components/Table/Filters'
+import {Filters} from '../../components/Table/Filters'
 
 
 function View() {
@@ -30,7 +30,7 @@ function View() {
                 <div className='my-books-container'>
                     {isLoggedUser() ? (
                     <span>
-                        <Filters2 columns = {COLUMNS} setMydata={setMydata} token={cookie.get('login')} presetPath={'/user/mis_libros'} />
+                        <Filters columns = {COLUMNS} setMydata={setMydata} token={cookie.get('login')} presetPath={'/user/mis_libros'} />
                         <Table data = {myData} columns = {COLUMNS}/>
                         <div className='buttons-container'>
                         <button id='add-book'>Nuevo Libro</button>

@@ -5,7 +5,7 @@ import Layout from '../../components/Layout';
 import { COLUMNS } from './MyLoansColumns'
 import CatalogButton from '../../components/Buttons/CatalogButton';
 import Cookies from "universal-cookie";
-import {Filters2} from '../../components/Table/Filters'
+import {Filters} from '../../components/Table/Filters'
 
 import './styles.desktop.css'
 import { isLoggedUser } from '../../services/OauthServices';
@@ -30,7 +30,7 @@ function View() {
                 <div class='my-loans-container'>
                     {isLoggedUser() ? (
                         <span>
-                            <Filters2 columns = {COLUMNS} setMydata={setMydata} token={cookie.get('login')} presetPath={'/user/mis_prestamos'}/>
+                            <Filters columns = {COLUMNS} setMydata={setMydata} token={cookie.get('login')} presetPath={'/user/mis_prestamos'}/>
                             <Table data = {myData} columns = {COLUMNS}/>
                             <CatalogButton />
                         </span>

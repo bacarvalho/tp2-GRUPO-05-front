@@ -4,7 +4,7 @@ import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
 import { COLUMNS } from './HomeColumns'
 import { Quote } from '../../components/Quote'
-import {Filters2} from '../../components/Table/Filters';
+import {Filters} from '../../components/Table/Filters';
 
 
 function View() {
@@ -25,7 +25,7 @@ function View() {
         <>
             <Layout>
                 <Quote />
-                <Filters2 columns = {COLUMNS} setMydata={setMydata} token={null}/>
+                <Filters columns = {COLUMNS} setMydata={setMydata} token={null}/>
                 <Table data = {mydata} columns = {COLUMNS}/>
             </Layout>
         </>
