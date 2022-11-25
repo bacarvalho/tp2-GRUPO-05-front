@@ -1,7 +1,6 @@
 import React, { useMemo } from 'react'
 import { useTable, useSortBy, usePagination } from 'react-table'
 //import MOCK_DATA from './sampledata.json'
-import { GlobalFilter } from './GlobalFilter'
 
 import './styles.desktop.css'
 
@@ -17,8 +16,7 @@ export default function Table({data, columns}) {
 		canNextPage,
 		canPreviousPage,
 		pageOptions,
-		setGlobalFilter,
-		state: { pageIndex, globalFilter },
+		state: { pageIndex },
 		prepareRow,
 		} =
 		useTable({
@@ -29,11 +27,9 @@ export default function Table({data, columns}) {
 			usePagination
 		);
 
-		// const {globalFilter} = state;
 
 	return (
 		<div className='table-container'>
-			<GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
 			<table {...getTableProps()}>
 				<thead>
 					{headerGroups.map((headerGroup) => (
