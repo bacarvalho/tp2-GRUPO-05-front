@@ -9,6 +9,7 @@ import {Filters} from '../../components/Table/Filters';
 
 function View() {
     const [mydata, setMydata] = useState([]);
+
     useEffect(() => {
         const getData = async () => {
             let response = await getLibros();   
@@ -19,11 +20,12 @@ function View() {
         getData();
     }, []);
 
+
     return (
         <>
             <Layout>
                 <Quote />
-                <Filters columns = {COLUMNS}/>
+                <Filters columns = {COLUMNS} setMydata={setMydata}/>
                 <Table data = {mydata} columns = {COLUMNS}/>
             </Layout>
         </>
