@@ -50,11 +50,10 @@ function enviarForm(e){
   console.log(Sinopsis);
   console.log(Anio);
   console.log(Image);
-  console.log(Image.name);
   console.log(id);
-  
+
   var file = new File([Image], Image.name);
-  const path = __dirname + '../../public/images/' + fileName;
+  const path = __dirname + '../../public/images/' + ISBN;
 
   file.mv(path, (error) => {
     if (error) {
@@ -76,7 +75,7 @@ function enviarForm(e){
     id_autor:autor,
     id_genero:genero,
     id_editorial:editorial,
-    imagen_portada: Image.name,
+    imagen_portada: ISBN,
     sinopsis:Sinopsis,
     anio:Anio,
     id: id,
