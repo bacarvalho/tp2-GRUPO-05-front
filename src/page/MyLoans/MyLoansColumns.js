@@ -28,7 +28,7 @@ export const COLUMNS = () => {
   return ([
     {
       Header: 'Acción',
-      disableFilter: true,
+      disableFilterBy: true,
       disableSortBy: true,
       Cell: props => (
         <span>
@@ -40,7 +40,7 @@ export const COLUMNS = () => {
     {
       Header: 'Portada',
       accessor: 'Ejemplar.Libro.imagen_portada',
-      disableFilters: true,
+      disableFilterBy: true,
       disableSortBy: true,
       Cell: tableProps => (
         <img

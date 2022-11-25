@@ -26,8 +26,15 @@ export const COLUMNS = () => {
     {
       Header: 'Portada',
       accessor: 'Libro.imagen_portada',
-      disableFilters: true,
-      disableSortBy: true
+      disableSortBy: true,
+      disableFilterBy: true,
+      Cell: tableProps => (
+        <img
+          src={`/imagenes_portadas/${tableProps.row.original.Libro.isbn}.jpg`}
+          width={60}
+          alt='Portada'
+        />
+      )
     },
     {
       Header: 'Autor',

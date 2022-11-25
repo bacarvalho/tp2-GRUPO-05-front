@@ -4,11 +4,12 @@ import Table  from '../../components/Table';
 import {getLibros} from '../../services/librosServices';
 import { COLUMNS } from './HomeColumns'
 import { Quote } from '../../components/Quote'
-
+import {Filters} from '../../components/Table/Filters';
 
 
 function View() {
     const [mydata, setMydata] = useState([]);
+
     useEffect(() => {
         const getData = async () => {
             let response = await getLibros();   
@@ -19,10 +20,12 @@ function View() {
         getData();
     }, []); 
 
+
     return (
         <>
             <Layout>
                 <Quote />
+                <Filters columns = {COLUMNS()} setMydata={setMydata} token={null}/>
                 <Table data = {mydata} columns = {COLUMNS()}/>
             </Layout>
         </>

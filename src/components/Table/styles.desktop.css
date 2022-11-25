@@ -50,4 +50,7 @@ table tr:hover {background-color: #ddd;}
     margin-top: 10px;
 }
 
-
+.filters-container, .button-container{
+    display:flex;
+    justify-content: center;
+}

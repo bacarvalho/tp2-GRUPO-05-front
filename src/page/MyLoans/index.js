@@ -4,6 +4,7 @@ import Table from '../../components/Table';
 import Layout from '../../components/Layout';
 import { COLUMNS } from './MyLoansColumns'
 import CatalogButton from '../../components/Buttons/CatalogButton';
+import {Filters} from '../../components/Table/Filters'
 
 import './styles.desktop.css'
 import { getTokenUser, isLoggedUser } from '../../services/OauthServices';
@@ -27,6 +28,7 @@ function View() {
                 <div className='my-loans-container'>
                     {isLoggedUser() ? (
                         <span>
+                            <Filters columns = {COLUMNS()} setMydata={setMydata} token={getTokenUser()} presetPath={'/user/mis_prestamos'}/>
                             <Table data = {myData} columns = {COLUMNS()}/>
                             <CatalogButton />
                         </span>

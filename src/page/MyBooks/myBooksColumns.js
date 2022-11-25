@@ -29,16 +29,14 @@ export const COLUMNS = () => {
   const navigate = useNavigate();
 
 return([
-  {
-    
     // primer grupo
-    Header: "Libro",
-    // primer grupo de columnas
-    columns: [
+    // Header: "Libro",
+    // // primer grupo de columnas
+    // columns: [
       {
         Header: 'Acción',
         accessor: 'action',
-        disableFilters: true,
+        disableFilterBy: true,
         disableSortBy: true,
         Cell: props => (
           <span>
@@ -50,11 +48,11 @@ return([
       {
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
-        disableFilters: true,
         disableSortBy: true,
+        disableFilterBy: true,
         Cell: tableProps => (
           <img
-            src={tableProps.row.original.Libro.imagen_portada}
+            src={`/imagenes_portadas/${tableProps.row.original.Libro.isbn}.jpg`}
             width={60}
             alt='Portada'
           />
@@ -75,16 +73,17 @@ return([
       {
         Header: 'Editorial',
         accessor: 'Libro.Editorial.nombre'
-      }
-      ]
-  },
-  // segundo grupo de columnas: info de prestamo
-  {
-    Header: "Prestamos",
-    columns: [
+      },
+      //]
+  // },
+  // // segundo grupo de columnas: info de prestamo
+  // {
+  //   Header: "Prestamos",
+  //   columns: [
       {
         Header: "Fecha Desde",
         accessor: "Prestamo.fecha_inicio",
+        disableFilterBy: true,
         Cell: ({ value }) => {
           if (value == null) {
             return 'N/A'
@@ -101,7 +100,7 @@ return([
           return value;
         }
       },
-    ]
-  }
-  ])}
-  
+  //  ]
+  //}
+    ])
+  };
