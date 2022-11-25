@@ -1,15 +1,21 @@
 import {format} from 'date-fns'
-import { eliminarLibro } from '../../services/librosServices';
+import { eliminarLibro, getDetailsBook } from '../../services/librosServices';
 import { getTokenUser } from '../../services/OauthServices';
+import { useNavigate } from "react-router-dom";
 
-const handleEdit = (cell) => {
-  console.log("details ",cell?.row?.original);
+
+
+const handleEdit = async(cell, navigate) => {
+  console.log(cell?.row?.original.id, getTokenUser())
+  let response = await getDetailsBook(cell?.row?.original.id, getTokenUser());
+  
+  navigate('/page/EditCreateBooks',
+    { state: { data: response.data} }
+    
+  );
 }
 
 const handleDelete = async(cell) => {
-  console.log("delete", cell?.row?.original);
-
-
   let response = await eliminarLibro(cell.row.original.id, getTokenUser());
   if (response.status) {
     alert('Libro eliminado');
@@ -18,8 +24,13 @@ const handleDelete = async(cell) => {
   }
 }
 
-export const COLUMNS = [
+export const COLUMNS = () => {
+
+  const navigate = useNavigate();
+
+return([
   {
+    
     // primer grupo
     Header: "Libro",
     // primer grupo de columnas
@@ -31,7 +42,7 @@ export const COLUMNS = [
         disableSortBy: true,
         Cell: props => (
           <span>
-            <button className="act-btn" id='edit' onClick={() => handleEdit(props)}>Editar</button>
+            <button className="act-btn" id='edit' onClick={() => handleEdit(props, navigate)}>Editar</button>
             <button className="act-btn" id ='delete' onClick={()=> handleDelete(props)}>Borrar</button>
           </span>
         )
@@ -92,5 +103,5 @@ export const COLUMNS = [
       },
     ]
   }
-  ]
+  ])}
   

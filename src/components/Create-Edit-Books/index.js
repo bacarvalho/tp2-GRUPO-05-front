@@ -4,10 +4,8 @@ import './styles.desktop.css'
 import { enviarForm } from './SaveNewBook';
 
 
-
 function getImage(imagenPhoto) {
-	const image = 'images/' + imagenPhoto;
-	return image.toString();
+	return `/imagenes_portadas/${imagenPhoto}.jpg`;
 }
 
 function DisableNonImage() {
@@ -15,16 +13,15 @@ function DisableNonImage() {
 	document.getElementById("image1").style.display = "none";
 }
 
-function CEBooks({/*libro*/ }) {
+function CEBooks({libro}) {
+	if(libro === undefined){
+		libro = {isbn: "",titulo: "", Autor:{nombre:""}, Genero:{nombre:""}, Editorial:{nombre:""}, Anio: "", Sinopsis: ""}
+	}
+
 	const navigate = useNavigate();
 	const [selectedFile, setSelectedFile] = useState();
 	const [preview, setPreview] = useState();
 
-	const libro = {
-		image: '',
-		isbn: '123',
-		id: '1',
-	}
 
 	useEffect(() => {
 		if (!selectedFile) {
@@ -80,7 +77,7 @@ function CEBooks({/*libro*/ }) {
 
 				<div className="container grid mt-5">
 					<div className="imagen">
-						<img id="image1" src={libro.image === '' ? 'images/NoPhoto.jpg' : getImage(libro.image)} alt="" />
+						<img id="image1" src={libro.isbn === '' ? '/images/NoPhoto.jpg' : getImage(libro.isbn)} alt="" />
 						{selectedFile && <img src={preview} width="416" height="416" />}
 						<input type="file" id="imageFile" accept='image/png, image/jpg' onChange={onSelectFile} ></input>
 						<div className="imagenButton">
@@ -99,15 +96,15 @@ function CEBooks({/*libro*/ }) {
 							</div>
 							<div className="campo">
 								<label >Autor:</label>
-								<input defaultValue={libro.autor} type="text" id="autor" placeholder="Autor del libro" required />
+								<input defaultValue={libro.Autor.nombre} type="text" id="autor" placeholder="Autor del libro" required />
 							</div>
 							<div className="campo">
 								<label >Genero:</label>
-								<input defaultValue={libro.genero} type="text" id="genero" placeholder="Genero" required />
+								<input defaultValue={libro.Genero.nombre} type="text" id="genero" placeholder="Genero" required />
 							</div>
 							<div className="campo">
 								<label >Editorial:</label>
-								<input defaultValue={libro.editorial} type="text" id="editorial" placeholder="Editorial" required />
+								<input defaultValue={libro.Editorial.nombre} type="text" id="editorial" placeholder="Editorial" required />
 							</div>
 							<div className="campo">
 								<label >Año:</label>

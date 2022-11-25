@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useNavigate } from "react-router-dom";
 import Layout from '../../components/Layout';
 import {COLUMNS} from './myBooksColumns'
 import Table from '../../components/Table'
@@ -17,6 +18,12 @@ function View() {
         }
         getData();
     }, []);
+
+    let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    console.log("aca")
+    navigate('/page/EditCreateBooks');
+  }
     
     return(
         <>
@@ -25,9 +32,9 @@ function View() {
                 <div className='my-books-container'>
                     {isLoggedUser() ? (
                     <span>
-                        <Table data = {myData} columns = {COLUMNS}/>
+                        <Table data = {myData} columns = {COLUMNS()}/>
                         <div className='buttons-container'>
-                        <button id='add-book'>Nuevo Libro</button>
+                        <button type="submit" id='add-book' onClick={routeChange}>Nuevo Libro</button>
                         </div>
                     </span>
                     ) : 
