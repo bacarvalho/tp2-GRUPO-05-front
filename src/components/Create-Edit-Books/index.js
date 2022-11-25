@@ -4,7 +4,6 @@ import './styles.desktop.css'
 import { enviarForm } from './SaveNewBook';
 
 
-
 function getImage(imagenPhoto) {
 	const image = 'images/' + imagenPhoto;
 	return image.toString();
@@ -22,7 +21,7 @@ function CEBooks({/*libro*/ }) {
 
 	const libro = {
 		image: '',
-		isbn: '123',
+		isbn: '',
 	}
 
 	useEffect(() => {
@@ -45,17 +44,31 @@ function CEBooks({/*libro*/ }) {
 			setSelectedFile(undefined)
 			return
 		}
-		setSelectedFile(e.target.files[0])
+		console.log(e.target.files);
+		
+		
+		//setSelectedFile(e.target.files[0])
+
+		ImageSave(e.target.files[0]) 
 	}
 
 
-	function ImageSave() {
+	function ImageSave(file) {
+		//debugger;
+		//const file = selectedFile;
+		var reader = new FileReader();
 
-		const file = preview;
+  reader.addEventListener('load', function() {
+	
+	document.getElementById("ImageBlob").value=reader.result;
+	console.log(document.getElementById("ImageBlob").value);
+  });
+  reader.readAsText(file);
+		/*
 		const fileName = document.getElementById('ISBNLibro').defaultValue;
 
 
-		const path = __dirname + '../../public/images' + fileName;
+		const path = __dirname + '../../public/imagenes_portadas/' + fileName;
 
 		file.mv(path, (error) => {
 			if (error) {
@@ -64,7 +77,7 @@ function CEBooks({/*libro*/ }) {
 
 			return
 
-		});
+		});*/
 	}
 
 
@@ -117,8 +130,9 @@ function CEBooks({/*libro*/ }) {
 								<input defaultValue={libro.sinopsis} type="textarea" className="Sinopsis" id="Sinopsis" placeholder="Sinopsis" />
 							</div>
 							<input defaultValue={libro.isbn} className="ISBNLibro" id="ISBNLibro" type="hidden" />
+							<input id="ImageBlob" type="hidden" />
 							<div id="buttonGuardar">
-								<button type="submit" className="btn btn-success" value="submit" onClick={() => { ImageSave() }} >Guardar</button>
+								<button type="submit" className="btn btn-success" value="submit" >Guardar</button>
 							</div>
 							<div id="buttonVolver">
 								<button type="button" className="btn btn-success" onClick={() => navigate(-1)} >Volver y descartar</button>

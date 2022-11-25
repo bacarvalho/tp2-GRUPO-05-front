@@ -1,10 +1,10 @@
 import { agregarLibro, editarLibro } from "../../services/librosServices";
 
-const formulario = document.querySelector('form')
 
 class Interfaz{
-
+  
   mostrarAlerta(mensaje, tipo){
+    const formulario = document.getElementById('form')
     const divAlert = document.createElement('div')
     divAlert.classList.add('alert', 'd-block','text-center', 'col-12', 'mt-2')
 
@@ -28,23 +28,24 @@ class Interfaz{
 const interfaz = new Interfaz()
 
 function enviarForm(e){
-  e.preventDefault();
+//e.preventDefault();
   console.log("Llega")
-  const ISBNLibro = document.getElementById('ISBNLibro').defaultValue
-  const ISBN = document.getElementById('ISBN').defaultValue  
+  const ISBNLibro = document.getElementById('ISBNLibro').value
+  const ISBN = document.getElementById('ISBN').value  
   const titulo = document.getElementById('Titulo').defaultValue  
   const autor = document.getElementById('autor').defaultValue 
   const genero = document.getElementById('genero').defaultValue 
   const editorial = document.getElementById('editorial').defaultValue
   const Sinopsis = document.getElementById('Sinopsis').defaultValue
   const Anio = document.getElementById('Anio').defaultValue
-  const Image = document.getElementById('imageFile').defaultValue
-  
+const Image = document.getElementById('ImageBlob').value
+console.log(Image);
+  /*
   if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
     return 
   }
-  
+  */
   const libroObj = {
     ISBN:ISBN,
     titulo:titulo,
@@ -53,9 +54,9 @@ function enviarForm(e){
     id_editorial:editorial,
     sinopsis:Sinopsis,
     anio:Anio,
-    
+    image:Image,
   }
-
+  debugger;
   //Cambiar BACKEND para que agergarLibro haga todo.
   if (ISBNLibro === ''){
     console.log(libroObj);
@@ -66,7 +67,7 @@ function enviarForm(e){
 
     editarLibro(libroObj);
   }
-  
+  debugger;
   
 }
 
