@@ -3,12 +3,6 @@ import { devolverLibro, solicitarLibro } from '../../services/librosServices';
 import { getTokenUser, isLoggedUser } from "../../services/OauthServices";
 import { useNavigate } from "react-router-dom";
 
-function getImage(imagenPhoto) {
-    const image = 'images/' + imagenPhoto;
-    return image.toString();
-}
-
-
 const ViewBook = ({ book }) => {
     const [isOk, setIsOk] = useState("");
     const [isDisable, setIsDisable] = useState(false);
