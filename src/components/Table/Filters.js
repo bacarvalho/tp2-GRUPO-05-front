@@ -3,33 +3,37 @@ import { searchService }  from '../../services/librosServices'
 
 const mymap =new Map();
 
-async function handleSubmit(e) {
-    e.preventDefault();
-    '/?'
+async function handleSubmit(e, setMydata) {
+    let queryParams = '/?'
+    
+    for (let [key, value] of  mymap.entries()) {
+        queryParams = queryParams + (key + "=" + value);
+    }
+    console.log('query',queryParams);
 
     const response = await searchService(queryParams);
 	//const response = await LoginUser(username, password);
-	// if(response.status) {
+	 if(response.status) {
 	// 	const cookie = new Cookies();
 	// 	cookie.set('login', response.data);
 	// 	navigate("/");
 	// } else {
 	// 	setIsDisabled(false);
 	// 	setErrorMessage(response.error.message);
-	// }
-    console.log('triggered event');
-    console.log(mymap);
+    setMydata(response.data);
+	 }
+
 
   };
 
-export const Filters = ({columns}) =>{
+export const Filters = ({columns, setMydata}) =>{
 
     console.log(columns);
     return (
         <div className='filters-container'>
         <div className='filters-form'>
             Filtrar Resultados
-            <form id='filters-form' onSubmit= {handleSubmit}>
+            <form id='filters-form' onSubmit= {handleSubmit(setMydata)}>
                 {columns.map((column)=>{
                     if (! column.disableFilterBy) {
                         return ( 

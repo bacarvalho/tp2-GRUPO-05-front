@@ -30,7 +30,7 @@ function View() {
                 <div className='my-books-container'>
                     {isLoggedUser() ? (
                     <span>
-                        <Filters columns = {COLUMNS}/>
+                        <Filters columns = {COLUMNS} setMydata={setMydata} />
                         <Table data = {myData} columns = {COLUMNS}/>
                         <div className='buttons-container'>
                         <button id='add-book'>Nuevo Libro</button>
