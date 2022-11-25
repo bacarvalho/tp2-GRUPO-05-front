@@ -9,14 +9,15 @@ const handleDelete = (cell) => {
 }
 
 export const COLUMNS = [
-  {
+//  {
     // primer grupo
-    Header: "Libro",
-    // primer grupo de columnas
-    columns: [
+    // Header: "Libro",
+    // // primer grupo de columnas
+    // columns: [
       {
         Header: 'Acción',
         accessor: 'action',
+        disableFilterBy: true,
         disableSortBy: true,
         Cell: props => (
           <span>
@@ -29,6 +30,7 @@ export const COLUMNS = [
         Header: 'Portada',
         accessor: 'Libro.imagen_portada',
         disableSortBy: true,
+        disableFilterBy: true,
         Cell: tableProps => (
           <img
             src={tableProps.row.original.Libro.imagen_portada}
@@ -52,16 +54,17 @@ export const COLUMNS = [
       {
         Header: 'Editorial',
         accessor: 'Libro.Editorial.nombre'
-      }
-      ]
-  },
-  // segundo grupo de columnas: info de prestamo
-  {
-    Header: "Prestamos",
-    columns: [
+      },
+      //]
+  // },
+  // // segundo grupo de columnas: info de prestamo
+  // {
+  //   Header: "Prestamos",
+  //   columns: [
       {
         Header: "Fecha Desde",
         accessor: "Prestamo.fecha_inicio",
+        disableFilterBy: true,
         Cell: ({ value }) => {
           if (value == null) {
             return 'N/A'
@@ -78,7 +81,7 @@ export const COLUMNS = [
           return value;
         }
       },
-    ]
-  }
+  //  ]
+  //}
   ]
   
