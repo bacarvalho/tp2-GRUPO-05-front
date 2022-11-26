@@ -1,31 +1,31 @@
 import { useNavigate } from "react-router-dom";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { LoginUser} from "../../services/OauthServices";
+import { getTokenUser, LoginUser} from "../../services/OauthServices";
 import Cookies from "universal-cookie";
 
 
-const Login = ({islogged}) => {
+const Login = () => {
 
   const navigate = useNavigate();
   const [username, setusername] = useState("");
   const [password, setpassword] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');
-
-  useEffect(() => {
-	if (islogged){
-		navigate("/");
-	}
-  })
   
   async function handleSubmit(e) {
     e.preventDefault();
+	const cookie = new Cookies();
 	const response = await LoginUser(username, password);
-	if(response.status) {
-		const cookie = new Cookies();
-		cookie.set('login', response.data);
-		navigate("/");
+	if(response.status ) {
+		if(getTokenUser()) {
+			cookie.set('login', response.data);
+			cookie.set('user', username);
+			navigate("/books/my_books");
+		} else {
+			cookie.set('login', response.data);
+			navigate(-1);
+		}
 	} else {
 		setIsDisabled(false);
 		setErrorMessage(response.error.message);
