@@ -8,16 +8,10 @@ const ViewBook = ({ book }) => {
 
     const [isOk, setIsOk] = useState("");
     const [isDisable, setIsDisable] = useState(true);
-    const [buttonDisable, setButtonDisable] = useState(true);
-
     const navigate = useNavigate();
 
     useEffect(() => {
         setIsDisable(book.Prestamo === null);
-
-        console.log(book.Prestamo);
-        console.log(isDisable);
-        setButtonDisable(book.Prestamo?.Usuario?.nombre === getUserName());
     }, [book]);
 
     async function refundBook() {
@@ -47,7 +41,7 @@ const ViewBook = ({ book }) => {
         }
     };
 
-    function sarasa () {
+    function sarasa() {
         navigate(-1);
     }
 
@@ -75,9 +69,7 @@ const ViewBook = ({ book }) => {
                     {book.Libro.sinopsis}
                 </div>
             </div>
-            {isDisable ? <button className="action" onClick={requestBook}>Solicitar Libro</button> : (buttonDisable ? <button className="action" onClick={refundBook}>Devolver Libro</button> :
-                <div className="action">Libro Ya Prestado</div>)
-            }
+            {isDisable ? <button className="action" onClick={requestBook}>Solicitar Libro</button> : <button className="action" onClick={refundBook}>Devolver Libro</button>}
             {isOk !== '' && <div className="response">{isOk}</div>}
         </div>
     );

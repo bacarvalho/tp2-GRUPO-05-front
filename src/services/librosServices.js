@@ -17,6 +17,22 @@ async function getLibros() {
   }
 }
 
+async function getLibrosLogged(token) {
+  try {
+    const response = await instance.get('/catalog', {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    })
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
+
 async function datosMisPrestamos(token) {
   try {
     const response = await instance.get('/user/mis_prestamos', {
@@ -179,4 +195,4 @@ async function eliminarLibro(bookId, token) {
 }
 
 
-export { getLibros, datosMisPrestamos, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro, eliminarLibro, agregarLibro, editarLibro, searchService };
+export { getLibros, datosMisPrestamos, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro, eliminarLibro, agregarLibro, editarLibro, searchService, getLibrosLogged };
