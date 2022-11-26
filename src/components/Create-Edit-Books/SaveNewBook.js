@@ -1,6 +1,5 @@
 import { agregarLibro, editarLibro } from "../../services/librosServices";
 import { getTokenUser } from "../../services/OauthServices";
-import { useNavigate } from 'react-router-dom';
  
 
 const formulario = document.querySelector('form')
@@ -34,17 +33,15 @@ function enviarForm(e){
   
   e.preventDefault();
   const ISBNLibro = document.getElementById('ISBNLibro').value
-  const id = document.getElementById('idEjemplar').value
   const ISBN = document.getElementById('ISBN').value  
   const titulo = document.getElementById('Titulo').value  
   const autor = document.getElementById('autor').value 
-  const genero = document.getElementById('genero').value 
+  const genero = document.getElementById('generos').value
   const editorial = document.getElementById('editorial').value
   const Sinopsis = document.getElementById('Sinopsis').value
   const Anio = document.getElementById('Anio').value
-  const Image = document.getElementById('imageFile').value
 
-  
+
   
   if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
@@ -57,21 +54,11 @@ function enviarForm(e){
     autor:autor,
     genero:genero,
     editorial:editorial,
-    imagen_portada: ISBN,
+    imagen_portada: ISBN + ".jpg",
     sinopsis:Sinopsis,
     anio:Anio,
-    id: id,
     
   }
-  console.log(typeof libroObj.isbn);
-  console.log(typeof titulo);
-  console.log(typeof autor);
-  console.log(typeof genero);
-  console.log(typeof editorial);
-  console.log(typeof Sinopsis);
-  console.log(typeof Anio);
-  console.log(typeof Image);
-  console.log(typeof id);
 
   if (ISBNLibro === ''){
     agregarLibro(libroObj,getTokenUser());

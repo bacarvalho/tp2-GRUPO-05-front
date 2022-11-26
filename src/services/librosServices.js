@@ -5,12 +5,16 @@ const instance = axios.create({
 });
 
 
-async function getLibros() {
-  try {
-    const response = await instance.get('/')
+async function getGeneros(token) {
+    try {
+    const response = await instance.get('/book/generos', {
+      headers:{
+        'Authorization': `Bearer ${token}`
+      }
+    })
     if (response.status === 200) {
-      const libros = response.data;
-      return { status: true, data: libros };
+      const generos = response.data;
+      return { status: true, data: generos };
     }
   } catch (error) {
     return { status: false, data: error.message };
@@ -162,6 +166,18 @@ async function solicitarLibro(bookId, token) {
   }
 }
 
+async function getLibros() {
+  try {
+    const response = await instance.get('/')
+    if (response.status === 200) {
+      const libros = response.data;
+      return { status: true, data: libros };
+    }
+  } catch (error) {
+    return { status: false, data: error.message };
+  }
+}
+
 async function eliminarLibro(bookId, token) {
   try {
     const response = await instance.delete(`/user/borrar_libro/${bookId}`, {
@@ -179,4 +195,4 @@ async function eliminarLibro(bookId, token) {
 }
 
 
-export { getLibros, datosMisPrestamos, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro, eliminarLibro, agregarLibro, editarLibro, searchService };
+export { getLibros, datosMisPrestamos,getGeneros, datosMisLibros, getDetailsBook, solicitarLibro, devolverLibro, eliminarLibro, agregarLibro, editarLibro, searchService };
