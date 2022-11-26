@@ -1,18 +1,20 @@
 import { useNavigate } from "react-router-dom";
+import { isLoggedUser } from "../../services/OauthServices";
 
-const handleView= (cell, navigate, location) => {
-  //Depende de lo que pase en el back, es posible que tengamos que hacer un request al detalle del libro para ver el dueño y si esta prestado.
-    navigate('books/detail',  
-      {state:{data: cell.cell.row.original}}
+const handleView = (cell, navigate, location) => {
+  if (isLoggedUser()) {
+    navigate('books/detail',
+      { state: { data: cell.cell.row.original } }
     );
+  } else
+    alert('Es necesario estar logeado para ver este detalle');
 }
-
 
 export const COLUMNS = () => {
 
   const navigate = useNavigate();
-  
-  return([
+
+  return ([
     {
       Header: 'Acción',
       disableFilter: true,
@@ -49,10 +51,9 @@ export const COLUMNS = () => {
       accessor: 'Libro.Genero.nombre'
     },
     {
-        Header: 'Editorial',
-        accessor: 'Libro.Editorial.nombre'
-      }
+      Header: 'Editorial',
+      accessor: 'Libro.Editorial.nombre'
+    }
   ])
 
-} 
-  
+}
