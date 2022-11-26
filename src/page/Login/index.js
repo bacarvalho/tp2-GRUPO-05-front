@@ -5,7 +5,7 @@ import { isLoggedUser } from '../../services/OauthServices';
 function View() {
 
     return (
-        <Login islogged={isLoggedUser()}/>     
+        <Login />     
     )
 }
        

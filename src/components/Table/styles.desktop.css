@@ -54,3 +54,7 @@ table tr:hover {background-color: #ddd;}
     display:flex;
     justify-content: center;
 }
+
+td, th {
+    text-align: center;
+}
