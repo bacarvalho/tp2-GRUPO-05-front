@@ -79,7 +79,7 @@ async function datosMisLibros(token) {
 async function agregarLibro(libro, token) {
 
   try {
-    const response = await instance.post(`/user/crear_libro/${libro.isbn}`, libro,  {
+    const response = await instance.post(`/user/crear_libro`, libro,  {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -97,7 +97,7 @@ async function agregarLibro(libro, token) {
 async function editarLibro(libro, token) {
 
   try {
-    const response = await instance.post(`/user/editar_libro/${libro.isbn}`, libro,  {
+    const response = await instance.put(`/user/editar_libro/${libro.isbn}`, libro,  {
       headers: {
         'Authorization': `Bearer ${token}`
       }

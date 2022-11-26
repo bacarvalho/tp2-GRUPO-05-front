@@ -51,10 +51,10 @@ function CEBooks({libro}) {
 
 		const file = preview;
 		const fileName = document.getElementById('ISBNLibro').value;
-		debugger
 
 		const path = __dirname + '../../public/images/' + fileName;
 
+		/*
 		file.mv(path, (error) => {
 			if (error) {
 				console.error(error);
@@ -63,6 +63,7 @@ function CEBooks({libro}) {
 			return
 
 		});
+		*/
 	}
 
 
@@ -76,10 +77,10 @@ function CEBooks({libro}) {
 			<div className="body">
 
 				<div className="container grid mt-5">
-					<div className="imagen">
-						<img id="image1" src={libro.isbn === '' ? '/images/NoPhoto.jpg' : getImage(libro.isbn)} alt="" />
+					<div className="imagen" width="416" height="416" >
+						<img id="image1" src={libro.isbn === '' ? '/images/NoPhoto.jpg' : getImage(libro.isbn)} alt="" width="416" height="416"/>
 						{selectedFile && <img src={preview} width="416" height="416" />}
-						<input type="file" id="imageFile" accept='image/png, image/jpg' onChange={onSelectFile} ></input>
+						<input type="file" id="imageFile" accept='image/png, image/jpg' width="416" height="416"  onChange={onSelectFile} ></input>
 						<div className="imagenButton">
 							<label>Subi la foto de portada!</label>
 						</div>
