@@ -24,7 +24,7 @@ const Login = () => {
 			navigate("/books/my_books");
 		} else {
 			cookie.set('login', response.data);
-			navigate('-1');
+			navigate(-1);
 		}
 	} else {
 		setIsDisabled(false);
