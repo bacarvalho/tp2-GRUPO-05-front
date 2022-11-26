@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.desktop.css'
 import { enviarForm } from './SaveNewBook';
-
+import {getGeneros} from '../../services/librosServices';
+import { getTokenUser } from '../../services/OauthServices';
 
 function getImage(imagenPhoto) {
 	return `/imagenes_portadas/${imagenPhoto}.jpg`;
@@ -13,7 +14,7 @@ function DisableNonImage() {
 	document.getElementById("image1").style.display = "none";
 }
 
-function CEBooks({libro}) {
+function CEBooks({libro,generos}) {
 	if(libro === undefined){
 		libro = {isbn: "",titulo: "", Autor:{nombre:""}, Genero:{nombre:""}, Editorial:{nombre:""}, Anio: "", Sinopsis: ""}
 	}
@@ -21,7 +22,6 @@ function CEBooks({libro}) {
 	const navigate = useNavigate();
 	const [selectedFile, setSelectedFile] = useState();
 	const [preview, setPreview] = useState();
-
 
 	useEffect(() => {
 		if (!selectedFile) {
@@ -66,8 +66,6 @@ function CEBooks({libro}) {
 		*/
 	}
 
-
-
 	return (
 		<>
 			<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossOrigin='anonymous' />
@@ -100,8 +98,15 @@ function CEBooks({libro}) {
 								<input defaultValue={libro.Autor.nombre} type="text" id="autor" placeholder="Autor del libro" required />
 							</div>
 							<div className="campo">
-								<label >Genero:</label>
-								<input defaultValue={libro.Genero.nombre} type="text" id="genero" placeholder="Genero" required />
+								<label htmlFor="generos">Genero:</label>
+								<select  id="generos" name="generos">
+								{generos.map((e,i)=>{
+									if(e.nombre === libro.Genero.nombre){
+										return(<option selected key={i} value={e.nombre}>{e.nombre}</option>)
+									}
+									return(<option key={i} value={e.nombre}>{e.nombre}</option>)
+								})}
+								</select>
 							</div>
 							<div className="campo">
 								<label >Editorial:</label>
