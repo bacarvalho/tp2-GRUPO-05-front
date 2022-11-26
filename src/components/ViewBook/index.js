@@ -47,9 +47,16 @@ const ViewBook = ({ book }) => {
         }
     };
 
+    function sarasa () {
+        navigate(-1);
+    }
+
     return (
         <div className="container">
             <div className="container-header">
+                <div>
+                    <button onClick={sarasa}> Volver atras</button>
+                </div>
                 <div className="container-picture">
                     <img id="image1" src={`/imagenes_portadas/${book.Libro.isbn}.jpg`} />
                 </div>
