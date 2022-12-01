@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.desktop.css'
 import { enviarForm } from './SaveNewBook';
-import {getGeneros} from '../../services/librosServices';
-import { getTokenUser } from '../../services/OauthServices';
 
 function getImage(imagenPhoto) {
 	return `http://localhost:3000/book/imagen/${imagenPhoto}`;

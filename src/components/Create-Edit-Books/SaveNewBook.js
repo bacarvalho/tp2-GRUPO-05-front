@@ -31,7 +31,8 @@ class Interfaz{
 
 const interfaz = new Interfaz()
 
-async function enviarForm(e,selectedFile){
+function enviarForm(e,selectedFile){
+
   e.preventDefault();
   const ISBNLibro = document.getElementById('ISBNLibro').value
   const ISBN = document.getElementById('ISBN').value  
@@ -71,11 +72,11 @@ async function enviarForm(e,selectedFile){
   } else {
     editarLibro(fd,getTokenUser());
   }
-  setTimeout(myURL, 100);
+  setTimeout(redirectURL, 100);
   
 }
 
-async function myURL() {
+function redirectURL() {
   document.location.href = 'http://localhost:3001/books/my_books';
 }
 
