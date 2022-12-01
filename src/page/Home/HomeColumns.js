@@ -33,7 +33,7 @@ export const COLUMNS = () => {
       Cell: tableProps => (
         <img
           // src={`/imagenes_portadas/${tableProps.row.original.Libro.isbn}.jpg`}
-          src={`http://localhost:3000/book/imagen/${tableProps.row.original.Libro.isbn}`}
+          src={`http://localhost:3000/book/imagen/${tableProps.row.original.Libro.imagen_portada}`}
           width={60}
           alt='Portada'
         />
