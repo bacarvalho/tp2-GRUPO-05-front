@@ -53,7 +53,7 @@ const ViewBook = ({ book }) => {
                 </div>
                 <div className="container-picture">
                     {/* <img id="image1" src={`/imagenes_portadas/${book.Libro.isbn}.jpg`} /> */}
-                    <img id="image1" src={`http://localhost:3000/book/imagen/${book.Libro.isbn}`} alt="imagen de libro" width={300}/>
+                    <img id="image1" src={`http://localhost:3000/book/imagen/${book.Libro.imagen_portada}`} alt="imagen de libro" width={300}/>
                 </div>
                 <div className="container-info">
                     <span className="info-field">Titulo: {book.Libro.titulo}</span>

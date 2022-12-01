@@ -29,7 +29,7 @@ class Interfaz{
 
 const interfaz = new Interfaz()
 
-function enviarForm(e){
+function enviarForm(e,selectedFile){
   
   e.preventDefault();
   const ISBNLibro = document.getElementById('ISBNLibro').value
@@ -43,27 +43,40 @@ function enviarForm(e){
 
 
   
-  if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === ''){
+  if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === '' || !selectedFile){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
     return 
   }
+
+  let fd = new FormData()
   
-  const libroObj = {
-    isbn:parseInt(ISBN,10),
-    titulo:titulo,
-    autor:autor,
-    genero:genero,
-    editorial:editorial,
-    imagen_portada: ISBN + ".jpg",
-    sinopsis:Sinopsis,
-    anio:Anio,
+  fd.append('imageFile',selectedFile,selectedFile.name)
+  fd.append('isbn',parseInt(ISBN,10))
+  fd.append('titulo',titulo)
+  fd.append('autor',autor)
+  fd.append('genero',genero)
+  fd.append('editorial',editorial)
+  fd.append('sinopsis',Sinopsis)
+  fd.append('anio',Anio)
+  
+  // const libroObj = {
+  //   isbn:parseInt(ISBN,10),
+  //   titulo:titulo,
+  //   autor:autor,
+  //   genero:genero,
+  //   editorial:editorial,
+  //   imagen_portada: ISBN + ".jpg",
+  //   sinopsis:Sinopsis,
+  //   anio:Anio,
     
-  }
+  // }
 
   if (ISBNLibro === ''){
-    agregarLibro(libroObj,getTokenUser());
+    // agregarLibro(libroObj,getTokenUser());
+    agregarLibro(fd,getTokenUser());
   } else {
-    editarLibro(libroObj,getTokenUser());
+    // editarLibro(libroObj,getTokenUser());
+    editarLibro(fd,getTokenUser());
   }
   
   

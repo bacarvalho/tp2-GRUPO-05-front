@@ -16,7 +16,7 @@ function DisableNonImage() {
 
 function CEBooks({libro,generos}) {
 	if(libro === undefined){
-		libro = {isbn: "",titulo: "", Autor:{nombre:""}, Genero:{nombre:""}, Editorial:{nombre:""}, Anio: "", Sinopsis: ""}
+		libro = {isbn: "",titulo: "", Autor:{nombre:""}, Genero:{nombre:""}, Editorial:{nombre:""}, Anio: "", Sinopsis: "",imagen_portada: ""}
 	}
 
 	const navigate = useNavigate();
@@ -51,20 +51,22 @@ function CEBooks({libro,generos}) {
 
 		const file = preview;
 		const fileName = document.getElementById('ISBNLibro').value;
-
+	
 		const path = __dirname + '../../public/images/' + fileName;
-
+	
 		/*
 		file.mv(path, (error) => {
 			if (error) {
 				console.error(error);
 			};
-
+	
 			return
-
+	
 		});
 		*/
 	}
+
+
 
 	return (
 		<>
@@ -76,7 +78,7 @@ function CEBooks({libro,generos}) {
 
 				<div className="container grid mt-5">
 					<div className="imagen" width="416" height="416" >
-						<img id="image1" src={libro.isbn === '' ? '/images/NoPhoto.jpg' : getImage(libro.isbn)} alt="" width="416" height="416"/>
+						<img id="image1" src={libro.imagen_portada === '' ? '/images/NoPhoto.jpg' : getImage(libro.imagen_portada)} alt="" width="416" height="416"/>
 						{selectedFile && <img src={preview} width="416" height="416" />}
 						<input type="file" id="imageFile" accept='image/png, image/jpg' width="416" height="416"  onChange={onSelectFile} ></input>
 						<div className="imagenButton">
@@ -84,7 +86,7 @@ function CEBooks({libro,generos}) {
 						</div>
 					</div>
 					<div className="formulario">
-						<form id="form" onSubmit={enviarForm}>
+						<form id="form" onSubmit={(e) => {enviarForm(e,selectedFile)}}>
 							<div className="campo">
 								<label>ISBN:</label>
 								<input defaultValue={libro.isbn} type="text" id="ISBN" placeholder="ISBN" required />

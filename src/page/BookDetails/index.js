@@ -13,6 +13,7 @@ function View() {
             isbn: '',
             titulo: '',
             anio: '',
+            imagen_portada: '',
             sinopsis: "in quis justo maecenas rhoncus aliquam lacus morbi",
             Autor: { nombre: '' },
             Genero: {
