@@ -47,24 +47,6 @@ function CEBooks({libro,generos}) {
 	}
 
 
-	function ImageSave() {
-
-		const file = preview;
-		const fileName = document.getElementById('ISBNLibro').value;
-	
-		const path = __dirname + '../../public/images/' + fileName;
-	
-		/*
-		file.mv(path, (error) => {
-			if (error) {
-				console.error(error);
-			};
-	
-			return
-	
-		});
-		*/
-	}
 
 
 
@@ -125,7 +107,7 @@ function CEBooks({libro,generos}) {
 							<input defaultValue={libro.isbn} className="ISBNLibro" id="ISBNLibro" type="hidden" />
 							<input defaultValue={libro.id} className="idEjemplar" id="idEjemplar" type="hidden" />
 							<div id="buttonGuardar">
-								<button type="submit" className="btn btn-success" value="submit" onClick={() => { ImageSave() }} >Guardar</button>
+								<button type="submit" className="btn btn-success" value="submit"  >Guardar</button>
 							</div>
 							<div id="buttonVolver">
 								<button type="button" className="btn btn-success" onClick={() => navigate(-1)} >Volver y descartar</button>

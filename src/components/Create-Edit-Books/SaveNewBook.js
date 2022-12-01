@@ -1,5 +1,7 @@
 import { agregarLibro, editarLibro } from "../../services/librosServices";
 import { getTokenUser } from "../../services/OauthServices";
+
+
  
 
 const formulario = document.querySelector('form')
@@ -29,8 +31,7 @@ class Interfaz{
 
 const interfaz = new Interfaz()
 
-function enviarForm(e,selectedFile){
-  
+async function enviarForm(e,selectedFile){
   e.preventDefault();
   const ISBNLibro = document.getElementById('ISBNLibro').value
   const ISBN = document.getElementById('ISBN').value  
@@ -65,27 +66,17 @@ function enviarForm(e,selectedFile){
   fd.append('sinopsis',Sinopsis)
   fd.append('anio',Anio)
 
-  // const libroObj = {
-  //   isbn:parseInt(ISBN,10),
-  //   titulo:titulo,
-  //   autor:autor,
-  //   genero:genero,
-  //   editorial:editorial,
-  //   imagen_portada: ISBN + ".jpg",
-  //   sinopsis:Sinopsis,
-  //   anio:Anio,
-    
-  // }
-
   if (ISBNLibro === ''){
-    // agregarLibro(libroObj,getTokenUser());
     agregarLibro(fd,getTokenUser());
   } else {
-    // editarLibro(libroObj,getTokenUser());
     editarLibro(fd,getTokenUser());
   }
+  setTimeout(myURL, 100);
   
-  
+}
+
+async function myURL() {
+  document.location.href = 'http://localhost:3001/books/my_books';
 }
 
 export {enviarForm};
