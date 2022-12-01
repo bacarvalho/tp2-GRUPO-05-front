@@ -43,14 +43,20 @@ function enviarForm(e,selectedFile){
 
 
   
-  if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === '' || !selectedFile){
+  if(titulo === '' || autor === '' || genero === '' || editorial === '' || ISBN === '' || Anio === '' ){
     interfaz.mostrarAlerta('Todos los campos son obligatorios', 'error')
     return 
   }
 
   let fd = new FormData()
   
-  fd.append('imageFile',selectedFile,selectedFile.name)
+  if (selectedFile) {
+    fd.append('imageFile',selectedFile,selectedFile.name)
+  }
+  else{
+    fd.append('imageFile',null)
+  }
+
   fd.append('isbn',parseInt(ISBN,10))
   fd.append('titulo',titulo)
   fd.append('autor',autor)
@@ -58,7 +64,7 @@ function enviarForm(e,selectedFile){
   fd.append('editorial',editorial)
   fd.append('sinopsis',Sinopsis)
   fd.append('anio',Anio)
-  
+
   // const libroObj = {
   //   isbn:parseInt(ISBN,10),
   //   titulo:titulo,

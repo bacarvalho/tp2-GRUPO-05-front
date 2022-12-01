@@ -117,7 +117,7 @@ async function agregarLibro(libro, token) {
 async function editarLibro(libro, token) {
 
   try {
-    const response = await instance.put(`/user/editar_libro/${libro.isbn}`, libro,  {
+    const response = await instance.put(`/user/editar_libro/${libro.get('isbn')}`, libro,  {
       headers: {
         'Authorization': `Bearer ${token}`
       }
