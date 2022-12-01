@@ -51,7 +51,8 @@ export const COLUMNS = () => {
       disableFilterBy: true,
       Cell: tableProps => (
         <img
-          src={`/imagenes_portadas/${tableProps.row.original.Libro.isbn}.jpg`}
+          // src={`/imagenes_portadas/${tableProps.row.original.Libro.isbn}.jpg`}
+          src={`http://localhost:3000/book/imagen/${tableProps.row.original.Libro.isbn}`}
           width={60}
           alt='Portada'
         />

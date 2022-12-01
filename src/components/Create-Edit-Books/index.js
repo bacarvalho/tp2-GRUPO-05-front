@@ -6,7 +6,7 @@ import {getGeneros} from '../../services/librosServices';
 import { getTokenUser } from '../../services/OauthServices';
 
 function getImage(imagenPhoto) {
-	return `/imagenes_portadas/${imagenPhoto}.jpg`;
+	return `http://localhost:3000/book/imagen/${imagenPhoto}`;
 }
 
 function DisableNonImage() {
