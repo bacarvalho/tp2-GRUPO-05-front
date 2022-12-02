@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Libro from './Images/libro';
-import Avatar from './Images/avatar';
+import Cookies from "universal-cookie";
 
 function Header( {isLogged} ) {
 
   function createAccount() {
     window.location.href = '/inProgress'
+  }
+
+  function LogOut() {
+    const cookie = new Cookies();
+    cookie.remove('login');
+    window.location.reload(true);
   }
 
   return (
@@ -26,7 +32,10 @@ function Header( {isLogged} ) {
               <button className='header-login-button' onClick={createAccount}>Crear cuenta</button>
             </div>
           ) : 
-            <Avatar /> 
+          <div className='header-logout-container'>
+            <img src="/images/exitv2.svg" className='header-logout-buttons' onClick={LogOut}/>
+            <span onClick={LogOut} className='header-logout-buttons'>Salir</span>
+          </div>
           } 
       </div>
     </div>
