@@ -8,7 +8,6 @@ const Filters = ({columns, setMydata, token, presetPath}) =>{
     async function handleSubmit(e) {
         e.preventDefault();
 
-
         const data = [...mymap.entries()];
         let asString = '?'+data
             .map(x => `${encodeURIComponent(x[0])}=${encodeURIComponent(x[1])}`)

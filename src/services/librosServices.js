@@ -67,7 +67,6 @@ async function searchService(token, queryParams) {
  
     if (response.status === 200) {
 
-      console.log(response.data);
       const libros = response.data;
       return { status: true, data: libros };
     }
