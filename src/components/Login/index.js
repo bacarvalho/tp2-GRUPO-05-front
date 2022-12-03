@@ -44,7 +44,7 @@ const Login = () => {
 			type="text"
 			name="Username"
 			value={username}
-			placeholder="Username"
+			placeholder="Usuario"
 			onChange={(e) => setusername(e.target.value)}
 			required
 		/>
@@ -61,7 +61,7 @@ const Login = () => {
 		{
 			isDisabled ? <></> : <div className="login-error">{errorMessage}</div>
 		}
-		<input type="submit" value="Submit" />
+		<input type="submit" value="Enviar" />
 	  </form>
     </div>
   );
