@@ -74,6 +74,7 @@ export const COLUMNS = () => {
     {
       Header: 'Fecha Desde',
       accessor: 'fecha_inicio',
+      disableFilterBy: true,
       Cell: ({ value }) => {
         if (value == null) {
           return 'N/A'

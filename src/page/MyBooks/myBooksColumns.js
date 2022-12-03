@@ -88,6 +88,7 @@ export const COLUMNS = () => {
     {
       Header: "Usuario",
       accessor: "Prestamo.Usuario.nombre",
+      disableFilterBy: true,
       Cell: ({ value }) => {
         if (value == null) {
           return 'N/A'
