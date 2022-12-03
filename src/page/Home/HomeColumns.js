@@ -17,7 +17,7 @@ export const COLUMNS = () => {
   return ([
     {
       Header: 'Acción',
-      disableFilter: true,
+      disableFilterBy: true,
       disableSortBy: true,
       Cell: props => (
         <span>
