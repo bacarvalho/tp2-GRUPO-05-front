@@ -6,8 +6,8 @@ const Filters = ({columns, setMydata, token, presetPath}) =>{
     const mymap =new Map();
 
     async function handleSubmit(e) {
-        console.log("token",token);
         e.preventDefault();
+
 
         const data = [...mymap.entries()];
         let asString = '?'+data
@@ -16,13 +16,20 @@ const Filters = ({columns, setMydata, token, presetPath}) =>{
         asString= asString.toLowerCase();
         console.log(asString);
         let mypath = [presetPath, asString].join('/');
-        console.log('myPath', mypath);
 
         let response = await searchService(token, mypath);   
              if(response.status) {
                 setMydata(response.data);
             }
-        };
+        
+        let inputs = document.querySelectorAll(".filter-input");
+        for (let i = 0; i < inputs.length; i++) {
+            let item = inputs[i];
+            item.value="";
+          }  
+    };
+
+        
         
     return (
         <>
